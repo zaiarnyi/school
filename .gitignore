@@ -151,13 +151,9 @@ Icon
 #########################################
 node_modules/
 package-lock.json
-#gulpfile.js
-#package.json
 gitattributes
-#.gitignore
 *.txt
 .htaccess
-#/#src/
 .idea/
 .vscode/
 
@@ -169,9 +165,6 @@ gitattributes
 # testing
 /coverage
 
-# production
-#/build
-#/#src
 
 # misc
 .env.local

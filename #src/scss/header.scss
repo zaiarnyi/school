@@ -44,7 +44,7 @@
 			backdrop-filter: blur(5px);
 			z-index: 4;
 			padding: 0px 20px 20px 20px;
-			@include adaptiv-value('padding-top', 100, 80, 1);
+			@include adaptiv-value('padding-top', 90, 70, 1);
 			overflow: auto;
 			-webkit-transition: all 0.5s ease 0s;
 			-o-transition: all 0.5s ease 0s;

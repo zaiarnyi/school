@@ -25,7 +25,7 @@
 				right: 0;
 				width: 0%;
 				height: 1px;
-				background-color: rgb(170, 170, 5);
+				background-color: rgba(255, 225, 69, 1); //rgb(170, 170, 5);
 				transition: all 0.3s ease 0s;
 			}
 			&:hover {
@@ -177,7 +177,7 @@
 				top: 0px;
 			}
 			&:nth-child(2) {
-				background-color: rgba(255, 225, 69, 0.8);
+				background-color: rgba(255, 225, 69, 1);
 			}
 			&:last-child {
 				top: auto;
@@ -195,7 +195,7 @@
 				&:last-child {
 					transform: rotate(45deg);
 					bottom: calc(50% - 1px);
-					background-color: rgba(255, 225, 69, 0.8);
+					background-color: rgba(255, 225, 69, 1);
 					height: 2px;
 				}
 			}

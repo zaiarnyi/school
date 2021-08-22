@@ -5,11 +5,11 @@
 //<ГОТОВЫЕ КЛАССЫ>====================================================================================================
 .row:after {
 	display: block;
-	content: "";
+	content: '';
 	clear: both;
 }
 .rub:after {
-	content: "₽";
+	content: '₽';
 }
 //====================================================================================================
 %noselect {
@@ -185,7 +185,7 @@ body.ie {
 }
 //====================================================================================================
 #map {
-	background: url("../img/icons/loading.gif") center / 50px no-repeat;
+	background: url('../img/icons/loading.gif') center / 50px no-repeat;
 }
 //====================================================================================================
 ._swiper {
@@ -211,7 +211,8 @@ body.ie {
 }
 .swiper-container-initialized {
 	.swiper-slide {
-		flex-shrink: 0;
+		flex-shrink: 0 !important;
+		width: 100%;
 		// transition-property: transform;
 	}
 }

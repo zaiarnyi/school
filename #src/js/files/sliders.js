@@ -32,7 +32,7 @@ if (sliders) {
 	sliders_bild_callback();
 }
 
-function sliders_bild_callback(params) { }
+function sliders_bild_callback(params) {}
 
 let sliderScrollItems = document.querySelectorAll('._swiper_scroll');
 if (sliderScrollItems.length > 0) {
@@ -48,7 +48,7 @@ if (sliderScrollItems.length > 0) {
 			scrollbar: {
 				el: sliderScrollBar,
 				draggable: true,
-				snapOnRelease: false
+				snapOnRelease: false,
 			},
 			mousewheel: {
 				releaseOnEdges: true,
@@ -58,10 +58,9 @@ if (sliderScrollItems.length > 0) {
 	}
 }
 
+function sliders_bild_callback(params) {}
 
-function sliders_bild_callback(params) { }
-
-let slider_about = new Swiper('.about__slider', {
+let slider_main = new Swiper('.slider__items', {
 	/*
 	effect: 'fade',
 	autoplay: {
@@ -75,22 +74,14 @@ let slider_about = new Swiper('.about__slider', {
 	spaceBetween: 0,
 	autoHeight: true,
 	speed: 800,
-	//touchRatio: 0,
-	//simulateTouch: false,
-	//loop: true,
-	//preloadImages: false,
-	//lazy: true,
-	// Dotts
-	//pagination: {
-	//	el: '.slider-quality__pagging',
-	//	clickable: true,
-	//},
+	simulateTouch: false,
+	lazy: true,
 	// Arrows
 	navigation: {
-		nextEl: '.about__more .more__item_next',
-		prevEl: '.about__more .more__item_prev',
+		nextEl: '.slider__pagination.slider__pagination_next',
+		prevEl: '.slider__pagination.slider__pagination_prev',
 	},
-	/*
+
 	breakpoints: {
 		320: {
 			slidesPerView: 1,
@@ -107,17 +98,56 @@ let slider_about = new Swiper('.about__slider', {
 		},
 		1268: {
 			slidesPerView: 4,
-			spaceBetween: 30,
+			spaceBetween: 35,
 		},
 	},
-	*/
+
 	on: {
 		lazyImageReady: function () {
 			ibg();
 		},
-	}
-	// And if we need scrollbar
-	//scrollbar: {
-	//	el: '.swiper-scrollbar',
-	//},
+	},
 });
+if (document.querySelector('.news')) {
+	let slider_news = new Swiper('.news__slider', {
+		observer: true,
+		observeParents: true,
+		slidesPerView: 1,
+		spaceBetween: 0,
+		autoHeight: true,
+		speed: 800,
+		lazy: true,
+		simulateTouch: false,
+		// Arrows
+		navigation: {
+			nextEl: '.news__arrow.news__arrow_next',
+			prevEl: '.news__arrow.news__arrow_prev',
+		},
+
+		breakpoints: {
+			320: {
+				slidesPerView: 1,
+				spaceBetween: 0,
+				autoHeight: true,
+			},
+			768: {
+				slidesPerView: 2,
+				spaceBetween: 20,
+			},
+			992: {
+				slidesPerView: 3,
+				spaceBetween: 20,
+			},
+			1268: {
+				slidesPerView: 4,
+				spaceBetween: 35,
+			},
+		},
+
+		on: {
+			lazyImageReady: function () {
+				ibg();
+			},
+		},
+	});
+}

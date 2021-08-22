@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		nextBtn: '.slider__pagination_next',
 		prevBtn: '.slider__pagination_prev',
 	};
+
 	const newsSliderData = {
 		slides: '.news__slide',
 		nextBtn: '.news__arrow_next',

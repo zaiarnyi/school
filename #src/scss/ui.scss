@@ -231,9 +231,9 @@ body.ie {
 ._tabs-item {
 }
 ._tabs-block {
-	display: none;
+	display: none !important;
 	&._active {
-		display: block;
+		display: block !important;
 	}
 }
 //=====================================================================================================================

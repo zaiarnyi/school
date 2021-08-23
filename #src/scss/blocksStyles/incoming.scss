@@ -1,0 +1,149 @@
+.incoming {
+	// .incoming__container
+
+	&__container {
+	}
+
+	// .incoming__top
+
+	&__top {
+		@include adaptiv-value('margin-bottom', 50, 30, 1);
+	}
+
+	// .incoming__title
+
+	&__title {
+	}
+
+	// .incoming__body
+
+	&__body {
+	}
+}
+.body-incoming {
+	// .body-incoming__nav
+
+	&__nav {
+		display: flex;
+		@include adaptiv-value('margin-bottom', 30, 20, 1);
+	}
+
+	// .body-incoming__item
+
+	&__item {
+		cursor: pointer;
+		box-shadow: 0px 4px 6px 2px rgba(0, 0, 0, 0.25);
+		color: #fff;
+		@include adaptiv-value('height', 48, 30, 1);
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		@include adaptiv-value('padding-left', 20, 10, 1);
+		@include adaptiv-value('padding-right', 20, 10, 1);
+		@include adaptiv-value('margin-right', 30, 15, 1);
+		position: relative;
+		transition: all 0.5s ease 0s;
+		border-radius: 4px;
+		overflow: hidden;
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: #4580ea;
+			z-index: -1;
+			transition: all 0.3s ease 0s;
+		}
+		&._active {
+			box-shadow: none;
+			&::after {
+				filter: blur(4px);
+			}
+		}
+		&:hover {
+			box-shadow: none;
+			&::after {
+				filter: blur(4px);
+			}
+		}
+	}
+
+	// .body-incoming__blocks
+
+	&__blocks {
+	}
+
+	// .body-incoming__block
+
+	&__block {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		@include adaptiv-value('padding', 30, 15, 1);
+		background: #8cbeeb;
+		border-radius: 4px;
+	}
+	// .body-incoming__content
+
+	&__content {
+		@include adaptiv-value('margin-bottom', 40, 20, 1);
+	}
+	// .body-incoming__title
+
+	&__title {
+		color: #fff;
+		font-weight: bold;
+		@include adaptiv-value('font-size', 24, 20, 1);
+		@include adaptiv-value('margin-bottom', 30, 20, 1);
+	}
+
+	// .body-incoming__text
+
+	&__text {
+		flex: 1 1 auto;
+		color: darken($color: #4580ea, $amount: 5);
+		@include adaptiv-value('font-size', 18, 14, 1);
+		line-height: 144%;
+	}
+
+	// .body-incoming__bottom
+
+	&__bottom {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	// .body-incoming__button
+
+	&__button {
+	}
+	// .body-incoming__link
+
+	&__link {
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		@include adaptiv-value('height', 48, 24, 1);
+		@include adaptiv-value('padding-left', 20, 10, 1);
+		@include adaptiv-value('padding-right', 20, 10, 1);
+		background-color: #4580ea;
+		border-radius: 4px;
+		color: #fff;
+		transition: all 0.3s ease 0s;
+		&:hover {
+			box-shadow: 0px 4px 6px 2px rgba(0, 0, 0, 0.25);
+		}
+	}
+
+	// .body-incoming__school
+
+	&__school {
+		font-family: $secongFamily;
+		color: #fff;
+		@include adaptiv-value('font-size', 24, 18, 1);
+	}
+}

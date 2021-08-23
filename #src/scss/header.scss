@@ -96,6 +96,8 @@
 	&__list {
 		display: flex;
 		margin-right: 15px;
+		margin-top: 7px;
+
 		li {
 			margin-right: 15px;
 			&:last-child {
@@ -105,6 +107,7 @@
 		@media (max-width: $md2 + px) {
 			display: block;
 			order: 2;
+			margin-top: 0px;
 			li {
 				margin-right: 0px;
 				@include adaptiv-value('margin-bottom', 40, 15, 1);

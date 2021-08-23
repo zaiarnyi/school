@@ -1,0 +1,27 @@
+.achievements {
+	// .achievements__container
+
+	&__container {
+	}
+
+	// .achievements__body
+
+	&__body {
+		display: flex;
+		flex-flow: column wrap;
+		.achievements__item:nth-child(3n + 1) {
+			order: 1;
+		}
+		.achievements__item:nth-child(3n + 2) {
+			order: 2;
+		}
+		.achievements__item:nth-child(3n) {
+			order: 3;
+		}
+	}
+
+	// .achievements__item
+
+	&__item {
+	}
+}

@@ -4,24 +4,59 @@
 	&__container {
 	}
 
+	// .achievements__top
+
+	&__top {
+		@include adaptiv-value('margin-bottom', 30, 20, 1);
+	}
+	// .achievements__title
+
+	&__title {
+	}
+
 	// .achievements__body
 
 	&__body {
 		display: flex;
 		flex-flow: column wrap;
-		.achievements__item:nth-child(3n + 1) {
+		// flex-wrap: wrap;
+
+		// align-content: space-between;
+		gap: 15px;
+		max-height: 1080px;
+		.achievements__item:nth-of-type(4n + 1) {
 			order: 1;
 		}
-		.achievements__item:nth-child(3n + 2) {
+		.achievements__item:nth-of-type(4n + 2) {
 			order: 2;
 		}
-		.achievements__item:nth-child(3n) {
+		.achievements__item:nth-of-type(4n + 3) {
 			order: 3;
+		}
+		.achievements__item:nth-of-type(4n) {
+			order: 4;
 		}
 	}
 
 	// .achievements__item
 
 	&__item {
+		flex: 0 1 24%;
+		align-self: flex-start;
+	}
+	// .achievements__link
+
+	&__link {
+		display: inline-block;
+		overflow: hidden;
+		max-width: 100%;
+		height: inherit;
+		img {
+			display: inline-block;
+			width: 270px;
+			height: 100%;
+			object-fit: cover;
+			object-position: center;
+		}
 	}
 }

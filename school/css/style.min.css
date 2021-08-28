@@ -2198,7 +2198,12 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   padding: 80px 0;
 }
 .news__top {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+}
+@media (max-width: 1170px) {
+  .news__top {
+    margin-bottom: calc(20px + 10 * ((100vw - 320px) / 850));
+  }
 }
 .news__all {
   display: flex;
@@ -2584,19 +2589,50 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   }
 }
 
+.achievements__top {
+  margin-bottom: 30px;
+}
+@media (max-width: 1170px) {
+  .achievements__top {
+    margin-bottom: calc(20px + 10 * ((100vw - 320px) / 850));
+  }
+}
 .achievements__body {
   display: flex;
   flex-flow: column wrap;
+  gap: 15px;
+  max-height: 1080px;
 }
-.achievements__body .achievements__item:nth-child(3n+1) {
+.achievements__body .achievements__item:nth-of-type(4n + 1) {
   order: 1;
 }
-.achievements__body .achievements__item:nth-child(3n+2) {
+.achievements__body .achievements__item:nth-of-type(4n + 2) {
   order: 2;
 }
-.achievements__body .achievements__item:nth-child(3n) {
+.achievements__body .achievements__item:nth-of-type(4n + 3) {
   order: 3;
 }
+.achievements__body .achievements__item:nth-of-type(4n) {
+  order: 4;
+}
+.achievements__item {
+  flex: 0 1 24%;
+  align-self: flex-start;
+}
+.achievements__link {
+  display: inline-block;
+  overflow: hidden;
+  max-width: 100%;
+  height: inherit;
+}
+.achievements__link img {
+  display: inline-block;
+  width: 270px;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
 .page {
   flex: 1 1 auto;
 }

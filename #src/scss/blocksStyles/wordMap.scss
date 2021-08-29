@@ -7,6 +7,16 @@
 	&__container {
 	}
 
+	// .word-map__top
+
+	&__top {
+		@include adaptiv-value('margin-bottom', 50, 25, 1);
+	}
+	// .word-map__title
+
+	&__title {
+	}
+
 	// .word-map__content
 
 	&__content {
@@ -31,7 +41,6 @@
 			object,
 			svg {
 				max-width: 100%;
-			
 			}
 		}
 	}

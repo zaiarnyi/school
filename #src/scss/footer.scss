@@ -51,6 +51,15 @@
 	// .footer__contacts-list
 
 	&__contacts-list {
+		display: flex;
+	}
+	// .footer__contacts-item
+	&__contacts-item {
+		@include adaptiv-value('margin-right', 55, 25, 1);
+		&:last-child {
+			margin: 0 0 0 0;
+		}
+
 		p {
 			@include adaptiv-value('padding-top', 10, 0, 1);
 			&:first-child {

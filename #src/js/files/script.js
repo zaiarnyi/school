@@ -141,6 +141,7 @@ function showMoreListCountry() {
 
 		div.append(button);
 		preParendElem.append(div);
+		wordMap();
 	}
 }
 

@@ -17,6 +17,11 @@ document.addEventListener('DOMContentLoaded', () => {
 	if (document.querySelector('.news')) {
 		sliderSHowNextSlide(newsSliderData);
 	}
+	showMoreListCountry();
+});
+
+window.addEventListener('load', () => {
+	wordMap();
 });
 //Show/Hide Search filed
 function toggleSearch() {
@@ -119,5 +124,74 @@ function sliderSHowNextSlide(data) {
 			e.target.style.backgroundImage = `url(${imgSrc})`;
 			e.target.title = `${next.querySelector('img').alt}`;
 		}
+	});
+}
+
+//Show more country
+function showMoreListCountry() {
+	const country = document.querySelectorAll('.info-word__list li'),
+		preParendElem = document.querySelector('.info-word');
+	if (country.length > 10) {
+		const div = document.createElement('div'),
+			button = document.createElement('button');
+
+		div.classList.add('info-word__show-more');
+		button.classList.add('info-word__button');
+		button.textContent = 'Показати ще';
+
+		div.append(button);
+		preParendElem.append(div);
+	}
+}
+
+//Events on word map
+function wordMap() {
+	const object = document.querySelector('object'),
+		svgDocument = object.contentDocument,
+		map = svgDocument.querySelector('#map'),
+		listMenu = document.querySelectorAll('.info-word__list li');
+
+	listMenu.forEach((item) => {
+		item.addEventListener('mouseenter', () => {
+			const countryValue = item.dataset.country,
+				currentMapCountry = map.querySelector(`#${countryValue}`);
+
+			[...currentMapCountry.children].forEach((item) => {
+				item.style.opacity = 0.6;
+				item.style.strokeWidth = 1;
+			});
+		});
+
+		item.addEventListener('mouseleave', () => {
+			const countryValue = item.dataset.country,
+				currentMapCountry = map.querySelector(`#${countryValue}`);
+
+			[...currentMapCountry.children].forEach((item) => {
+				item.style.opacity = 1;
+				item.style.strokeWidth = 0.5;
+			});
+		});
+	});
+
+	[...map.children].forEach((item) => {
+		item.addEventListener('mouseenter', () => {
+			const currentID = item.id,
+				menuItem = document.querySelector(
+					`.info-word__list li[data-country=${currentID}]`,
+				);
+			if (menuItem) {
+				menuItem.classList.add('active');
+			}
+		});
+
+		item.addEventListener('mouseleave', () => {
+			const currentID = item.id,
+				menuItem = document.querySelector(
+					`.info-word__list li[data-country=${currentID}]`,
+				);
+			if (menuItem && menuItem.classList.contains('active')) {
+				menuItem.classList.remove('active');
+			}
+		});
 	});
 }

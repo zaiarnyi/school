@@ -1,4 +1,7 @@
 .incoming {
+	@include adaptiv-value('padding-top', 110, 80, 1);
+	@include adaptiv-value('padding-bottom', 110, 80, 1);
+
 	// .incoming__container
 
 	&__container {

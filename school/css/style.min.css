@@ -2161,22 +2161,36 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
     margin-bottom: calc(8px + 4 * ((100vw - 320px) / 850));
   }
 }
-.footer__contacts-list p {
+.footer__contacts-list {
+  display: flex;
+}
+.footer__contacts-item {
+  margin-right: 55px;
+}
+@media (max-width: 1170px) {
+  .footer__contacts-item {
+    margin-right: calc(25px + 30 * ((100vw - 320px) / 850));
+  }
+}
+.footer__contacts-item:last-child {
+  margin: 0 0 0 0;
+}
+.footer__contacts-item p {
   padding-top: 10px;
 }
 @media (max-width: 1170px) {
-  .footer__contacts-list p {
+  .footer__contacts-item p {
     padding-top: calc(0px + 10 * ((100vw - 320px) / 850));
   }
 }
-.footer__contacts-list p:first-child {
+.footer__contacts-item p:first-child {
   padding-top: 0;
 }
-.footer__contacts-list li {
+.footer__contacts-item li {
   margin-bottom: 10px;
 }
 @media (max-width: 1170px) {
-  .footer__contacts-list li {
+  .footer__contacts-item li {
     margin-bottom: calc(7px + 3 * ((100vw - 320px) / 850));
   }
 }

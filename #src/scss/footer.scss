@@ -1,5 +1,140 @@
-footer {
+.footer {
+	background-color: #8cbeeb;
+	// .footer__container
+
+	&__container {
+	}
+
+	// .footer__content
+
+	&__content {
+		@include adaptiv-value('padding', 45, 24, 1);
+	}
+
+	// .footer__top
+
+	&__top {
+		@include adaptiv-value('margin-bottom', 45, 24, 1);
+	}
+
+	// .footer__title
+
+	&__title {
+		font-family: $secongFamily;
+		font-weight: 700;
+		color: #fff;
+		@include adaptiv-value('font-size', 36, 24, 1);
+	}
+
+	// .footer__body
+
+	&__body {
+	}
+
+	// .footer__items
+
+	&__items {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	// .footer__item
+
+	&__item {
+		p {
+			color: #fff;
+			@include adaptiv-value('font-size', 18, 14, 1);
+			@include adaptiv-value('margin-bottom', 12, 8, 1);
+		}
+	}
+
+	// .footer__contacts-list
+
+	&__contacts-list {
+		p {
+			@include adaptiv-value('padding-top', 10, 0, 1);
+			&:first-child {
+				padding-top: 0;
+			}
+		}
+		li {
+			@include adaptiv-value('margin-bottom', 10, 7, 1);
+		}
+	}
+
+	// .footer__contacts-link
+
+	&__contacts-link {
+		color: #4580ea;
+		text-transform: lowercase;
+		@media (min-width: $md2 + px) {
+			position: relative;
+			&::after {
+				content: '';
+				position: absolute;
+				bottom: -5px;
+				right: 0;
+				width: 0;
+				height: 1px;
+				background-color: darken($color: #4580ea, $amount: 15);
+				transition: all 0.5s ease 0s;
+			}
+			&:hover {
+				&::after {
+					width: 100%;
+					left: 0;
+				}
+			}
+		}
+	}
+
+	// .footer__social-title
+
+	&__social-title {
+		text-align: center;
+	}
+
+	// .footer__social-list
+
+	&__social-list {
+		display: flex;
+
+		li {
+			@include adaptiv-value('width', 58, 36, 1);
+			@include adaptiv-value('height', 58, 36, 1);
+			border-radius: 50%;
+			overflow: hidden;
+			margin-right: 15px;
+			@media (min-width: $md2 + px) {
+				transition: all 0.3s ease 0s;
+				&:hover {
+					box-shadow: 0px 4px 6px 2px rgba(0, 0, 0, 0.25);
+					a {
+						background-color: lighten($color: #064a89, $amount: 15);
+					}
+				}
+			}
+			&:last-child {
+				margin: 0;
+			}
+			a {
+				display: inline-block;
+				background-color: #064a89;
+				width: 100%;
+				height: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				transition: all 0.3s ease 0s;
+				img {
+					width: 24px;
+					height: 24px;
+				}
+			}
+		}
+	}
 }
+
 //====================================================================================================
 
 //====================================================================================================

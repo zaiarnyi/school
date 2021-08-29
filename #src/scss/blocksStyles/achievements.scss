@@ -22,7 +22,8 @@
 		// flex-wrap: wrap;
 
 		// align-content: space-between;
-		gap: 15px;
+		// gap: 15px;
+		margin: 0 -10px;
 		max-height: 1080px;
 		.achievements__item:nth-of-type(4n + 1) {
 			order: 1;
@@ -36,12 +37,32 @@
 		.achievements__item:nth-of-type(4n) {
 			order: 4;
 		}
+		.achievements__item:nth-child(1),
+		.achievements__item:nth-child(4),
+		.achievements__item:nth-child(6),
+		.achievements__item:nth-child(7),
+		.achievements__item:nth-child(8),
+		.achievements__item:nth-child(9),
+		.achievements__item:nth-child(10) {
+			height: 230px;
+		}
+		.achievements__item:nth-child(2),
+		.achievements__item:nth-child(5),
+		.achievements__item:nth-child(12) {
+			height: 370px;
+		}
+		.achievements__item:nth-child(3),
+		.achievements__item:nth-child(11) {
+			height: 300px;
+		}
 	}
 
 	// .achievements__item
 
 	&__item {
-		flex: 0 1 24%;
+		flex: 0 1 25%;
+		padding: 0 10px;
+		margin-bottom: 15px;
 		align-self: flex-start;
 	}
 	// .achievements__link
@@ -51,9 +72,18 @@
 		overflow: hidden;
 		max-width: 100%;
 		height: inherit;
+		box-shadow: 4px 4px 11px 2px rgba(0, 0, 0, 0.25);
+		border-radius: 4px;
+		overflow: hidden;
+		@media (min-width: $md2 + px) {
+			transition: transform 0.3s ease 0s;
+			&:hover {
+				transform: scale(1.1);
+			}
+		}
 		img {
 			display: inline-block;
-			width: 270px;
+			width: 278px;
 			height: 100%;
 			object-fit: cover;
 			object-position: center;

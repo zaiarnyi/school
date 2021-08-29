@@ -28,21 +28,24 @@
 	&__all-link {
 		font-size: 24px;
 		color: $secondColor;
-		position: relative;
-		&::after {
-			content: '';
-			position: absolute;
-			bottom: -5px;
-			right: 0;
-			width: 0;
-			height: 1px;
-			background-color: $secondColor;
-			transition: all 0.5s ease 0s;
-		}
-		&:hover {
+
+		@media (min-width: $md2 + px) {
+			position: relative;
 			&::after {
-				left: 0;
-				width: 100%;
+				content: '';
+				position: absolute;
+				bottom: -5px;
+				right: 0;
+				width: 0;
+				height: 1px;
+				background-color: $secondColor;
+				transition: all 0.5s ease 0s;
+			}
+			&:hover {
+				&::after {
+					left: 0;
+					width: 100%;
+				}
 			}
 		}
 	}

@@ -31,30 +31,37 @@ let src_folder = "#src";
 
 let path = {
 	build: {
-		html: project_name + "/",
-		js: project_name + "/js/",
-		css: project_name + "/css/",
-		images: project_name + "/img/",
-		fonts: project_name + "/fonts/",
-		json: project_name + "/json/"
+		html: project_name + '/',
+		js: project_name + '/js/',
+		css: project_name + '/css/',
+		images: project_name + '/img/',
+		fonts: project_name + '/fonts/',
+		json: project_name + '/json/',
 	},
 	src: {
-		favicon: src_folder + "/img/favicon.{jpg,png,svg,gif,ico,webp}",
-		html: [src_folder + "/**/*.html", "!" + src_folder + "/_*.html"],
-		js: [src_folder + "/js/app.js", src_folder + "/js/vendors.js"],
-		css: src_folder + "/scss/style.scss",
-		images: [src_folder + "/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}", "!**/favicon.*"],
-		fonts: src_folder + "/fonts/*.ttf",
-		json: src_folder + "/json/**/*.*"
+		favicon: src_folder + '/img/favicon.{jpg,png,svg,gif,ico,webp}',
+		html: [
+			src_folder + '/**/*.html',
+			'!' + src_folder + '/_*.html',
+			'!' + src_folder + '/pages/blocks/_*.html',
+		],
+		js: [src_folder + '/js/app.js', src_folder + '/js/vendors.js'],
+		css: src_folder + '/scss/style.scss',
+		images: [
+			src_folder + '/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}',
+			'!**/favicon.*',
+		],
+		fonts: src_folder + '/fonts/*.ttf',
+		json: src_folder + '/json/**/*.*',
 	},
 	watch: {
-		html: src_folder + "/**/*.html",
-		js: src_folder + "/**/*.js",
-		css: src_folder + "/scss/**/*.scss",
-		images: src_folder + "/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}",
-		json: src_folder + "/json/**/*.*"
+		html: src_folder + '/**/*.html',
+		js: src_folder + '/**/*.js',
+		css: src_folder + '/scss/**/*.scss',
+		images: src_folder + '/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}',
+		json: src_folder + '/json/**/*.*',
 	},
-	clean: "./" + project_name + "/"
+	clean: './' + project_name + '/',
 };
 
 // Пишем папки которые нужно копировать через запятую
@@ -70,10 +77,11 @@ function copyFolders() {
 function browserSync(done) {
 	browsersync.init({
 		server: {
-			baseDir: "./" + project_name + "/"
+			baseDir: './' + project_name + '/',
 		},
 		notify: false,
 		port: 3000,
+		browser: 'google chrome',
 	});
 }
 function html() {

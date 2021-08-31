@@ -3,6 +3,14 @@
     #map g{
             cursor: pointer;
     }
+    #map .click{
+        opacity:0.6;
+        stroke-width:2px;
+    }
+    #map .mouse{
+        opacity:0.6;
+        stroke-width:2px;
+    }
 </style>
     <g id="map">
 <g id="sd">

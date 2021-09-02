@@ -101,6 +101,7 @@ publish/
 csx
 *.build.csdef
 
+
 # Windows Store app package directory
 AppPackages/
 
@@ -157,6 +158,7 @@ gitattributes
 .idea/
 .idea
 .vscode/
+.gitignore
 
 
 # dependencies

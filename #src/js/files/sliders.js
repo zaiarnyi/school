@@ -70,12 +70,12 @@ let slider_main = new Swiper('.slider__items', {
 	*/
 	observer: true,
 	observeParents: true,
-	slidesPerView: 1,
-	spaceBetween: 0,
-	autoHeight: true,
-	speed: 800,
+	// slidesPerView: 1,
+	// spaceBetween: 0,
+	autoHeight: false,
+	// speed: 800,
 	simulateTouch: false,
-	lazy: true,
+	// lazy: true,
 	// Arrows
 	navigation: {
 		nextEl: '.slider__pagination.slider__pagination_next',
@@ -86,17 +86,24 @@ let slider_main = new Swiper('.slider__items', {
 		320: {
 			slidesPerView: 1,
 			spaceBetween: 0,
-			autoHeight: true,
+			simulateTouch: true,
+		},
+		480: {
+			slidesPerView: 2,
+			spaceBetween: 20,
 		},
 		768: {
-			slidesPerView: 2,
+			slidesPerView: 3,
 			spaceBetween: 20,
 		},
 		992: {
 			slidesPerView: 3,
 			spaceBetween: 20,
 		},
-		1268: {
+		1024: {
+			simulateTouch: false,
+		},
+		1240: {
 			slidesPerView: 4,
 			spaceBetween: 35,
 		},

@@ -30,6 +30,9 @@
 				}
 			}
 		}
+		@media (max-width: $md2 + px) {
+			flex-direction: column;
+		}
 	}
 
 	// .main-menu__item
@@ -45,8 +48,8 @@
 	// .item-menu__image
 
 	&__image {
-		@include adaptiv-value('width', 126, 80, 1);
-		@include adaptiv-value('height', 126, 80, 1);
+		@include adaptiv-value('width', 100, 60, 1);
+		@include adaptiv-value('height', 100, 60, 1);
 		border-radius: 50%;
 		overflow: hidden;
 		display: flex;
@@ -71,11 +74,29 @@
 			transition: all 0.3s ease 0s;
 			// transform: rotate(360deg);
 		}
+		img {
+			@include adaptiv-value('width', 60, 35, 1);
+			@include adaptiv-value('height', 60, 35, 1);
+		}
 	}
 	span {
 		display: inline-block;
 		margin: 0 auto;
 		@include adaptiv-value('font-size', 26, 18, 1);
 		color: $secondColor;
+	}
+	@media (max-width: $md2 + px) {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		.item-menu__image {
+			display: none;
+		}
+		span {
+			font-family: 'BebasNeue';
+			font-weight: bold;
+			font-size: 18px;
+			color: darken($color: $mainColor, $amount: 5);
+		}
 	}
 }

@@ -1,37 +1,41 @@
 //====================================================================================================
 .header {
-	height: 60px;
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 	z-index: 3;
 	transition: all 0.3s ease 0s;
+	@media (min-width: $md2 + px) {
+		height: 60px;
+	}
 	&._scroll {
 		position: fixed;
 		top: 0;
 		left: 0;
 		width: 100%;
-		height: 60px;
-		background-color: #fff;
-		.menu__link {
-			&::before {
-				display: none;
-			}
-			&::after {
-				content: '';
-				position: absolute;
-				bottom: 0;
-				right: 0;
-				width: 0%;
-				height: 1px;
-				background-color: rgba(255, 225, 69, 1); //rgb(170, 170, 5);
-				transition: all 0.3s ease 0s;
-			}
-			&:hover {
+		@media (min-width: $md2 + px) {
+			height: 60px;
+			background-color: #fff;
+			.menu__link {
+				&::before {
+					display: none;
+				}
 				&::after {
-					left: 0;
-					width: 100%;
+					content: '';
+					position: absolute;
+					bottom: 0;
+					right: 0;
+					width: 0%;
+					height: 1px;
+					background-color: rgba(255, 225, 69, 1); //rgb(170, 170, 5);
+					transition: all 0.3s ease 0s;
+				}
+				&:hover {
+					&::after {
+						left: 0;
+						width: 100%;
+					}
 				}
 			}
 		}
@@ -85,9 +89,21 @@
 			-o-transition: all 0.5s ease 0s;
 			transition: all 0.5s ease 0s;
 			flex-direction: column;
+
 			&._active {
 				right: 0;
 			}
+		}
+	}
+	&__content {
+		margin-right: 15px;
+		margin-top: 7px;
+		@media (max-width: $md2 + px) {
+			order: 2;
+			display: flex;
+			justify-content: space-around;
+			margin: 0;
+			width: 100%;
 		}
 	}
 
@@ -95,8 +111,6 @@
 
 	&__list {
 		display: flex;
-		margin-right: 15px;
-		margin-top: 7px;
 
 		li {
 			margin-right: 15px;
@@ -106,9 +120,11 @@
 		}
 		@media (max-width: $md2 + px) {
 			display: block;
-			order: 2;
-			margin-top: 0px;
+			// margin: 0 auto;
 			li {
+				display: flex;
+				justify-content: center;
+				align-items: center;
 				margin-right: 0px;
 				@include adaptiv-value('margin-bottom', 40, 15, 1);
 				&:last-child {
@@ -128,21 +144,23 @@
 		align-items: center;
 		text-align: center;
 		color: darken($color: $mainColor, $amount: 5);
-		position: relative;
-		&::before {
-			content: '';
-			position: absolute;
-			top: -10px;
-			left: -7px;
-			right: -7px;
-			bottom: -7px;
-			border-radius: 4px;
-			z-index: -1;
-			transition: background-color 0.3s ease 0s;
-		}
-		&:hover {
+		@media (min-width: $md2 + px) {
+			position: relative;
 			&::before {
-				background-color: #fff;
+				content: '';
+				position: absolute;
+				top: -10px;
+				left: -7px;
+				right: -7px;
+				bottom: -7px;
+				border-radius: 4px;
+				z-index: -1;
+				transition: background-color 0.3s ease 0s;
+			}
+			&:hover {
+				&::before {
+					background-color: #fff;
+				}
 			}
 		}
 	}
@@ -162,8 +180,8 @@
 	@media (max-width: $md2+px) {
 		display: block;
 		position: absolute;
-		top: 18px;
-		right: 10px;
+		top: 30px;
+		right: 24px;
 		width: 30px;
 		height: 18px;
 		cursor: pointer;
@@ -203,6 +221,9 @@
 				}
 			}
 		}
+	}
+	@media (max-width: $md4 + px) {
+		right: 16px;
 	}
 }
 .search-menu {

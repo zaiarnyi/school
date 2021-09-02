@@ -68,8 +68,10 @@ function sliderSHowNextSlide(data) {
 				? 3
 				: widthDevice >= 768
 				? 3
-				: widthDevice >= 320
+				: widthDevice >= 480
 				? 2
+				: widthDevice >= 320
+				? 1
 				: 0;
 
 	prevBtn.addEventListener('mouseenter', (e) => {
@@ -150,15 +152,28 @@ function wordMap() {
 	const object = document.querySelector('object'),
 		svgDocument = object.contentDocument,
 		map = svgDocument.querySelector('#map'),
-		listMenu = document.querySelectorAll('.info-word__list li');
+		listMenu = document.querySelectorAll('.info-word__list li'),
+		infoDescr = document.querySelector('.word-map__info');
 
 	//Список меню
 	listMenu.forEach((item) => {
+		//First show country
+		if (item.classList.contains('active')) {
+			const country = item.dataset.country,
+				title = item.textContent,
+				img = countryPicture(country, title),
+				elem = infoDescr.querySelector('.word-map__country');
+			elem.querySelector('span').textContent = title;
+			elem.append(img);
+		}
+
 		//Mouse
 		item.addEventListener('mouseenter', () => {
 			const countryValue = item.dataset.country,
 				currentMapCountry = map.querySelector(`#${countryValue}`);
-			currentMapCountry.classList.add('mouse');
+			if (!currentMapCountry.classList.contains('active')) {
+				currentMapCountry.classList.add('mouse');
+			}
 		});
 
 		item.addEventListener('mouseleave', () => {
@@ -170,58 +185,116 @@ function wordMap() {
 		//Click
 		item.addEventListener('click', (e) => {
 			const countryValue = item.dataset.country,
-				currentMapCountry = map.querySelector(`#${countryValue}`);
+				currentMapCountry = map.querySelector(`#${countryValue}`),
+				title = item.textContent,
+				img = countryPicture(countryValue, title),
+				elem = infoDescr.querySelector('.word-map__country');
 
 			if (!e.currentTarget.classList.contains('active')) {
 				listMenu.forEach((item) => item.classList.remove('active'));
 				e.target.classList.add('active');
+
 				[...map.children].forEach((item) => {
 					item.classList.remove('click');
 				});
 				currentMapCountry.classList.add('click');
 			} else {
 				e.currentTarget.classList.remove('active');
-				currentMapCountry.classList.remove('click')
+				currentMapCountry.classList.remove('click');
+			}
+
+			const check = [...listMenu].some((name) =>
+				name.classList.contains('active'),
+			);
+			if (!check) {
+				const currentCountry = listMenu[0].dataset.country,
+					mapId = map.querySelector(`#${currentCountry}`),
+					title = listMenu[0].textContent,
+					img = countryPicture(currentCountry, title);
+
+				listMenu[0].classList.add('active');
+				mapId.classList.add('click');
+				elem.querySelector('img').remove();
+				elem.append(img);
+				elem.querySelector('span').textContent = title;
+			} else {
+				elem.querySelector('img').remove();
+				elem.append(img);
+				elem.querySelector('span').textContent = title;
 			}
 		});
 	});
 
 	[...map.children].forEach((item) => {
-		item.addEventListener('mouseenter', () => {
+		item.addEventListener('mouseenter', (e) => {
 			const currentID = item.id,
 				menuItem = document.querySelector(
 					`.info-word__list li[data-country=${currentID}]`,
 				);
 			if (menuItem) {
 				menuItem.classList.add('mouse');
+				e.currentTarget.classList.add('mouse');
 			}
 		});
 
-		item.addEventListener('mouseleave', () => {
+		item.addEventListener('mouseleave', (e) => {
 			const currentID = item.id,
 				menuItem = document.querySelector(
 					`.info-word__list li[data-country=${currentID}]`,
 				);
 			if (menuItem && menuItem.classList.contains('mouse')) {
 				menuItem.classList.remove('mouse');
+				e.currentTarget.classList.remove('mouse');
 			}
 		});
 		item.addEventListener('click', (e) => {
 			const currentID = item.id,
 				menuItem = document.querySelector(
 					`.info-word__list li[data-country=${currentID}]`,
-				);
-			if(!e.currentTarget.classList.contains('click')){
+				),
+				title = menuItem.textContent,
+				img = countryPicture(currentID, title),
+				elem = infoDescr.querySelector('.word-map__country');
+
+			if (!e.currentTarget.classList.contains('click')) {
 				[...map.children].forEach((item) => item.classList.remove('click'));
 				listMenu.forEach((item) => item.classList.remove('active'));
 				if (menuItem) {
 					menuItem.classList.add('active');
 					e.currentTarget.classList.add('click');
 				}
-			}else{
-				e.currentTarget.classList.remove('click')
-				menuItem.classList.remove('active')
+			} else {
+				e.currentTarget.classList.remove('click');
+				menuItem.classList.remove('active');
+			}
+
+			const check = [...listMenu].some((name) =>
+				name.classList.contains('active'),
+			);
+
+			if (!check) {
+				const currentCountry = listMenu[0].dataset.country,
+					mapId = map.querySelector(`#${currentCountry}`),
+					title = listMenu[0].textContent,
+					img = countryPicture(currentCountry, title);
+
+				listMenu[0].classList.add('active');
+				mapId.classList.add('click');
+				elem.querySelector('img').remove();
+				elem.append(img);
+				elem.querySelector('span').textContent = title;
+			} else {
+				elem.querySelector('img').remove();
+				elem.append(img);
+				elem.querySelector('span').textContent = title;
 			}
 		});
 	});
+
+	function countryPicture(name, title) {
+		const img = document.createElement('img');
+		img.src = `img/country/${name.toUpperCase()}.svg`;
+		img.setAttribute('alt', `Країна ${title}`);
+		return img;
+	}
 }

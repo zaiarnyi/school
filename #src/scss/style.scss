@@ -63,10 +63,17 @@ body {
 ._container {
 	max-width: $maxWidthContainer + px;
 	margin: 0 auto;
+	@media (max-width: 1240px) {
+		padding: 0 50px;
+		max-width: 1270px;
+	}
 	@media (max-width: $md1 + px) {
-		max-width: 970px;
+		max-width: 1070px;
 	}
 	@media (max-width: $md2+px) {
+		max-width: 850px;
+	}
+	@media (max-width: $md3 + px) {
 		max-width: 750px;
 	}
 	@media (max-width: $md3+px) {

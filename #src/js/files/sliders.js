@@ -61,21 +61,12 @@ if (sliderScrollItems.length > 0) {
 function sliders_bild_callback(params) {}
 
 let slider_main = new Swiper('.slider__items', {
-	/*
-	effect: 'fade',
-	autoplay: {
-		delay: 3000,
-		disableOnInteraction: false,
-	},
-	*/
 	observer: true,
 	observeParents: true,
-	// slidesPerView: 1,
-	// spaceBetween: 0,
-	autoHeight: false,
-	// speed: 800,
-	simulateTouch: false,
-	// lazy: true,
+	slidesPerView: 1,
+	autoHeight: true,
+	speed: 800,
+	lazy: true,
 	// Arrows
 	navigation: {
 		nextEl: '.slider__pagination.slider__pagination_next',
@@ -84,28 +75,14 @@ let slider_main = new Swiper('.slider__items', {
 
 	breakpoints: {
 		320: {
-			slidesPerView: 1,
-			spaceBetween: 0,
 			simulateTouch: true,
 		},
-		480: {
-			slidesPerView: 2,
-			spaceBetween: 20,
-		},
-		768: {
-			slidesPerView: 3,
-			spaceBetween: 20,
-		},
-		992: {
-			slidesPerView: 3,
-			spaceBetween: 20,
-		},
+		480: {},
+		700: {},
+		992: {},
 		1024: {
-			simulateTouch: false,
-		},
-		1240: {
 			slidesPerView: 4,
-			spaceBetween: 35,
+			simulateTouch: false,
 		},
 	},
 
@@ -118,13 +95,12 @@ let slider_main = new Swiper('.slider__items', {
 if (document.querySelector('.news')) {
 	let slider_news = new Swiper('.news__slider', {
 		observer: true,
-		observeParents: true,
 		slidesPerView: 1,
-		spaceBetween: 0,
+		observeParents: true,
 		autoHeight: true,
 		speed: 800,
 		lazy: true,
-		simulateTouch: false,
+
 		// Arrows
 		navigation: {
 			nextEl: '.news__arrow.news__arrow_next',
@@ -133,21 +109,21 @@ if (document.querySelector('.news')) {
 
 		breakpoints: {
 			320: {
-				slidesPerView: 1,
-				spaceBetween: 0,
+				simulateTouch: true,
 				autoHeight: true,
+				slidesPerView: 1,
+			},
+			550: {
+				slidesPerView: 2,
 			},
 			768: {
-				slidesPerView: 2,
-				spaceBetween: 20,
-			},
-			992: {
 				slidesPerView: 3,
-				spaceBetween: 20,
 			},
-			1268: {
+			1024: {
+				simulateTouch: false,
+			},
+			1040: {
 				slidesPerView: 4,
-				spaceBetween: 35,
 			},
 		},
 

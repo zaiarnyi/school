@@ -144,6 +144,9 @@
 		align-items: center;
 		text-align: center;
 		color: darken($color: $mainColor, $amount: 5);
+		@media (max-width: $md2 + px) {
+			color: #fff;
+		}
 		@media (min-width: $md2 + px) {
 			position: relative;
 			&::before {
@@ -171,7 +174,7 @@
 		@media (max-width: $md2 + px) {
 			order: 1;
 			margin-left: auto;
-			@include adaptiv-value('margin-bottom', 40, 20, 1);
+			@include adaptiv-value('margin-bottom', 40, 60, 1);
 		}
 	}
 }
@@ -182,17 +185,17 @@
 		position: absolute;
 		top: 30px;
 		right: 24px;
-		width: 30px;
-		height: 18px;
+		width: 45px;
+		height: 24px;
 		cursor: pointer;
 		z-index: 5;
 		span {
 			transition: all 0.3s ease 0s;
-			top: calc(50% - 1px);
+			top: calc(50% - 2px);
 			left: 0px;
 			position: absolute;
 			width: 100%;
-			height: 2px;
+			height: 4px;
 			background-color: $mainColor;
 			&:first-child {
 				top: 0px;
@@ -210,14 +213,17 @@
 				transform: scale(0);
 				&:first-child {
 					transform: rotate(-45deg);
-					top: calc(50% - 1px);
-					height: 2px;
+					top: calc(50% - 2px);
+					height: 4px;
+				}
+				&:nth-child(2) {
+					transform: translate(-100%, 0) scale(0);
 				}
 				&:last-child {
 					transform: rotate(45deg);
-					bottom: calc(50% - 1px);
+					bottom: calc(50% - 2px);
 					background-color: rgba(255, 225, 69, 1);
-					height: 2px;
+					height: 4px;
 				}
 			}
 		}
@@ -226,6 +232,7 @@
 		right: 16px;
 	}
 }
+
 .search-menu {
 	position: relative;
 	// .search-menu__button
@@ -266,18 +273,19 @@
 		left: -280px;
 		opacity: 0;
 		visibility: hidden;
-		transform: translate(100%, 0);
-		transition: all 0.5s ease 0s;
+		transform: translate(0%, -50%) scale(1.5);
+		transition: all 0.3s ease 0s;
 		&.active {
 			opacity: 1;
 			visibility: visible;
 			transform: translate(0%, 0);
 		}
 		@media (max-width: $md2 + px) {
+			transform: translate(0%, -30%) scale(1.5);
 			bottom: none;
-			left: -235px;
+			@include adaptiv-value('left', -670, -235, 1);
 			top: 0;
-			min-width: 225px;
+			@include adaptiv-value('min-width', 650, 225, 1);
 		}
 	}
 }

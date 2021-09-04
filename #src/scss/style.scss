@@ -93,7 +93,7 @@ body {
 //<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
 //@import "datepicker";
 @import 'lightgallery';
-@import "pagging";
+@import 'pagging';
 @import 'popup';
 @import 'header';
 @import 'footer';
@@ -114,6 +114,8 @@ body {
 @import 'blocksStyles/contacts/map.scss';
 //News
 @import 'blocksStyles/news/news-section.scss';
+//Full-news
+@import 'blocksStyles/full-news/info.scss';
 
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
 

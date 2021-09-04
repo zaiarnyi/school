@@ -1866,6 +1866,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   .header._scroll {
     height: 60px;
     background-color: #fff;
+    box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.3);
   }
   .header._scroll .menu__link::before {
     display: none;

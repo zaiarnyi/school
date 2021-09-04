@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		sliderSHowNextSlide(newsSliderData);
 	}
 	showMoreListCountry();
+
 });
 
 window.addEventListener('load', () => {

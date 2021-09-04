@@ -2,18 +2,84 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	@include adaptiv-value('margin-bottom', 80, 50, 1);
+
 	// .pagging__arrow
 	&__arrow {
+		@include adaptiv-value('width', 48, 36, 1);
+		@include adaptiv-value('height', 48, 36, 1);
+		background-color: #fff;
+		background-repeat: no-repeat;
+		border-radius: 50%;
+		@include adaptiv-value('background-size', 24, 18, 1);
+		background-position: center;
+		&:first-child {
+			background-image: svg-url(
+				'<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="#{$secondColor}" d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"></path></svg>'
+			);
+		}
+		&:last-child {
+			background-image: svg-url(
+				'<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="#{$secondColor}" d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"></path></svg>'
+			);
+		}
+		@media (min-width: $md2 + px) {
+			transition: all 0.3s ease 0s;
+			&:hover {
+				box-shadow: 0px 4px 6px 2px rgb(0 0 0 / 25%);
+			}
+		}
 	}
 	// .pagging__list
 	&__list {
+		@include adaptiv-value('margin-right', 30, 24, 1);
+		@include adaptiv-value('margin-left', 30, 24, 1);
+		background-color: #fff;
+		border-radius: 10px;
+		@include adaptiv-value('height', 48, 36, 1);
+		@include adaptiv-value('padding-left', 36, 24, 1);
+		@include adaptiv-value('padding-right', 36, 24, 1);
+
 		display: flex;
+		justify-content: center;
+		align-items: center;
+
 		li {
+			@include adaptiv-value('margin-right', 25, 15, 1);
+			&:last-child {
+				margin: 0 0 0 0;
+			}
 		}
 	}
 	// .pagging__item
 	&__item {
+		cursor: pointer;
+		@include adaptiv-value('height', 36, 24, 1);
+		@include adaptiv-value('width', 36, 24, 1);
+		span {
+			width: inherit;
+			height: inherit;
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: #000;
+			@include adaptiv-value('font-size', 18, 14, 1);
+			border-radius: 50%;
+			transition: all 0.3s ease 0s;
+		}
+		@media (min-width: $md2 + px) {
+			&:hover {
+				span {
+					background-color: rgb(0 0 0 / 25%);
+				}
+			}
+		}
 		&._active {
+			span {
+				color: #fff;
+				background-color: $secondColor;
+			}
 		}
 	}
 }

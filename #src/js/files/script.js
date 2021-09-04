@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 window.addEventListener('load', () => {
-	if (window.innerWidth >= 992) {
+	if (window.innerWidth >= 992 && document.querySelector('.word-map')) {
 		wordMap();
 	}
 });

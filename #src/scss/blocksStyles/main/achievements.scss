@@ -88,13 +88,11 @@
 
 	&__item {
 		flex: 0 1 25%;
+		width: 25%;
 		@include adaptiv-value('padding-left', 10, 5, 1);
 		@include adaptiv-value('padding-right', 10, 5, 1);
 		@include adaptiv-value('margin-bottom', 10, 5, 1);
-
 		align-self: flex-start;
-		// max-width: 278px;
-		width: 25%;
 		@media (max-width: 1240 + px) {
 			flex: 0 1 33.3333%;
 			width: 33.333%;

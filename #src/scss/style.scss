@@ -100,11 +100,15 @@ body {
 @import 'home';
 @import 'blocksStyles/banner';
 @import 'blocksStyles/slider';
-@import 'blocksStyles/news';
 @import 'blocksStyles/secondMenu';
-@import 'blocksStyles/incoming';
-@import 'blocksStyles/achievements';
-@import 'blocksStyles/wordMap';
+//Main
+@import 'blocksStyles/main/news';
+@import 'blocksStyles/main/incoming';
+@import 'blocksStyles/main/achievements';
+@import 'blocksStyles/main/wordMap';
+//Teachers
+@import 'blocksStyles/teacher/teacher.scss';
+
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
 
 //<ОСНОВНОЙ БЛОК>====================================================================================================

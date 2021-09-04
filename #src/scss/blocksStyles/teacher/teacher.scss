@@ -1,0 +1,140 @@
+.staf {
+	@include adaptiv-value('padding-top', 110, 10, 1);
+	@include adaptiv-value('padding-bottom', 110, 50, 1);
+
+	// .staf__container
+
+	&__container {
+	}
+
+	// .staf__top
+
+	&__top {
+		@include adaptiv-value('margin-bottom', 50, 25, 1);
+		@media (max-width: $md2 + px) {
+			margin-bottom: 90px;
+		}
+	}
+
+	// .staf__title
+
+	&__title {
+	}
+
+	// .staf__body
+
+	&__body {
+		display: flex;
+		flex-wrap: wrap;
+		@include adaptiv-value('margin-right', -15, -5, 1);
+		@include adaptiv-value('margin-left', -15, -5, 1);
+		@media (max-width: 650px) {
+			margin: 0;
+		}
+	}
+
+	// .staf__item
+
+	&__item {
+		flex: 0 1 50%;
+		@include adaptiv-value('padding-left', 15, 5, 1);
+		@include adaptiv-value('padding-right', 15, 5, 1);
+		@include adaptiv-value('margin-bottom', 30, 15, 1);
+		@media (max-width: 650px) {
+			flex: 1 1 100%;
+			padding: 0;
+		}
+	}
+}
+.item-staf {
+	display: flex;
+	align-items: start;
+	background-color: #fff;
+	@include adaptiv-value('padding', 30, 20, 1);
+	border-radius: 8px;
+	@media (min-width: $md2 + px) {
+		transition: box-shadow 0.3s ease 0s;
+		&:hover {
+			box-shadow: 2px 8px 20px rgba($color: #000000, $alpha: 0.4);
+			.item-staf__icons {
+				box-shadow: none;
+			}
+			.item-staf__name {
+				span {
+					&::after {
+						left: 0;
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+	// .item-staf__icons
+
+	&__icons {
+		flex-grow: 0;
+		flex-shrink: 0;
+		@include adaptiv-value('flex-basis', 120, 40, 1);
+		@include adaptiv-value('width', 120, 40, 1);
+		@include adaptiv-value('height', 120, 40, 1);
+
+		border-radius: 50%;
+		overflow: hidden;
+		@include adaptiv-value('margin-right', 40, 20, 1);
+		box-shadow: 0px 4px 6px 2px rgb(0 0 0 / 25%);
+		transition: box-shadow 0.3s ease 0s;
+		img {
+			max-width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	// .item-staf__body
+
+	&__body {
+	}
+
+	// .item-staf__name
+
+	&__name {
+		@include adaptiv-value('margin-bottom', 25, 12, 1);
+		cursor: default;
+		span {
+			color: $secondColor;
+			font-family: $secongFamily;
+			@include adaptiv-value('font-size', 20, 18, 1);
+
+			position: relative;
+			&::after {
+				content: '';
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				width: 0;
+				height: 1px;
+				background-color: $secondColor;
+				transition: all 0.3s ease 0s;
+			}
+		}
+	}
+
+	// .item-staf__position
+
+	&__position {
+		font-weight: 700;
+		@include adaptiv-value('font-size', 18, 12, 1);
+		color: rgba($color: #000000, $alpha: 0.4);
+		@include adaptiv-value('margin-bottom', 7, 5, 1);
+		cursor: default;
+	}
+
+	// .item-staf__status
+
+	&__status {
+		@include adaptiv-value('font-size', 18, 12, 1);
+		color: rgba($color: #000000, $alpha: 0.4);
+		cursor: default;
+		line-height: 115%;
+	}
+}

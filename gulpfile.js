@@ -43,7 +43,7 @@ let path = {
 		html: [
 			src_folder + '/**/*.html',
 			'!' + src_folder + '/_*.html',
-			'!' + src_folder + '/pages/blocks/_*.html',
+			'!' + src_folder + '/pages/**/_*.html',
 		],
 		js: [src_folder + '/js/app.js', src_folder + '/js/vendors.js'],
 		css: src_folder + '/scss/style.scss',

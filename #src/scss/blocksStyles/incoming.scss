@@ -1,6 +1,6 @@
 .incoming {
-	@include adaptiv-value('padding-top', 110, 30, 1);
-	@include adaptiv-value('padding-bottom', 110, 30, 1);
+	@include adaptiv-value('padding-top', 110, 10, 1);
+	@include adaptiv-value('padding-bottom', 110, 10, 1);
 
 	// .incoming__container
 
@@ -11,6 +11,9 @@
 
 	&__top {
 		@include adaptiv-value('margin-bottom', 50, 30, 1);
+		@media (max-width: $md2 + px) {
+			margin-bottom: 70px;
+		}
 	}
 
 	// .incoming__title

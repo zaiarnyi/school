@@ -223,6 +223,9 @@ function wordMap() {
 				elem.querySelector('span').textContent = title;
 			}
 		});
+
+		//hide cursore pointer
+		hideCursore(item);
 	});
 
 	[...map.children].forEach((item) => {
@@ -236,7 +239,6 @@ function wordMap() {
 				e.currentTarget.classList.add('mouse');
 			}
 		});
-
 		item.addEventListener('mouseleave', (e) => {
 			const currentID = item.id,
 				menuItem = document.querySelector(
@@ -296,5 +298,13 @@ function wordMap() {
 		img.src = `img/country/${name.toUpperCase()}.svg`;
 		img.setAttribute('alt', `Країна ${title}`);
 		return img;
+	}
+
+	function hideCursore(item) {
+		const id = item.dataset.country;
+		if (map.querySelector(`#${id}`)) {
+			const group = map.querySelector(`#${id}`);
+			group.style.cursor = 'pointer';
+		}
 	}
 }

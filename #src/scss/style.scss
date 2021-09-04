@@ -41,7 +41,7 @@ $secondColor: #064a89;
 body {
 	color: $mainColor;
 	// background-color: #d9e3ef;
-	background-image: url('/img/icons/blue-snow.png');
+	background-image: url('../img/icons/blue-snow.png');
 	// background-image: url('/img/icons/so-white.png');
 	&._lock {
 		overflow: hidden;

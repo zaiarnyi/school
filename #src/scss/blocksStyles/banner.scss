@@ -1,4 +1,5 @@
 .banner {
+	@include adaptiv-value('margin-top', 50, 30, 1);
 	position: relative;
 	width: 100%;
 	text-align: center;

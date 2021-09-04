@@ -21,7 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 window.addEventListener('load', () => {
-	wordMap();
+	if (window.innerWidth >= 992) {
+		wordMap();
+	}
 });
 //Show/Hide Search filed
 function toggleSearch() {
@@ -68,10 +70,8 @@ function sliderSHowNextSlide(data) {
 				? 3
 				: widthDevice >= 768
 				? 3
-				: widthDevice >= 480
-				? 2
 				: widthDevice >= 320
-				? 1
+				? 2
 				: 0;
 
 	prevBtn.addEventListener('mouseenter', (e) => {

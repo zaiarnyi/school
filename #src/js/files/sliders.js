@@ -76,10 +76,11 @@ let slider_main = new Swiper('.slider__items', {
 	breakpoints: {
 		320: {
 			simulateTouch: true,
+			slidesPerView: 2,
 		},
-		480: {},
-		700: {},
-		992: {},
+		700: {
+			slidesPerView: 3,
+		},
 		1024: {
 			slidesPerView: 4,
 			simulateTouch: false,

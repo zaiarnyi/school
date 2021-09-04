@@ -52,7 +52,9 @@
 		display: flex;
 		justify-content: center;
 		min-width: 0;
-		margin: 0 -15px;
+
+		@include adaptiv-value('margin-right', -15, -5, 1);
+		@include adaptiv-value('margin-left', -15, -5, 1);
 	}
 
 	// .slider__item
@@ -60,7 +62,10 @@
 	&__item {
 		overflow: hidden;
 		min-width: 0;
-		padding: 0 15px;
+
+		@include adaptiv-value('padding-left', 15, 5, 1);
+		@include adaptiv-value('padding-right', 15, 5, 1);
+
 		flex: 0 1 25%;
 		@media (max-width: $md2 + px) {
 			flex: 0 1 33.333%;
@@ -68,14 +73,7 @@
 		@media (max-width: 700px) {
 			flex: 0 1 50%;
 		}
-		@media (max-width: 500px) {
-			flex: 1 1 100%;
-			text-align: center;
-			img {
-				max-width: 350px;
-				max-height: 350px;
-			}
-		}
+
 		img {
 			width: 100%;
 			border-radius: 10px;

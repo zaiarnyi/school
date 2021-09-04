@@ -94,10 +94,8 @@
 		height: 100%;
 		margin: 0 -15px;
 		@media (max-width: 1240px) {
-			margin: 0 -10px;
-		}
-		@media (max-width: 550px) {
-			margin: 0;
+			@include adaptiv-value('margin-left', -10, -5, 1);
+			@include adaptiv-value('margin-right', -10, -5, 1);
 		}
 	}
 
@@ -117,7 +115,8 @@
 		}
 		@media (max-width: 550px) {
 			flex: 1 1 auto;
-			padding: 0;
+			@include adaptiv-value('padding-left', 10, 5, 1);
+			@include adaptiv-value('padding-right', 10, 5, 1);
 		}
 	}
 

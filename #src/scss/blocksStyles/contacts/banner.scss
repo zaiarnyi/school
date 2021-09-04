@@ -1,0 +1,70 @@
+.contacts-banner {
+	@include adaptiv-value('margin-top', 110, 10, 1);
+	@include adaptiv-value('margin-bottom', 110, 10, 1);
+	// .contacts-banner__container
+
+	&__container {
+	}
+
+	// .contacts-banner__top
+
+	&__top {
+		@include adaptiv-value('margin-bottom', 50, 25, 1);
+		@media (max-width: $md2 + px) {
+			margin-bottom: 90px;
+		}
+	}
+
+	// .contacts-banner__title
+
+	&__title {
+	}
+
+	// .contacts-banner__body
+
+	&__body {
+		padding-bottom: 65%;
+		border-radius: 10px;
+		overflow: hidden;
+		@media (min-width: $md2 + px) {
+			&::after {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: rgba($color: #000000, $alpha: 0.3);
+				transition: all 0.3s ease 0s;
+			}
+			&::before {
+				content: 'Ліцей міжнародних відносин №51';
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 100%;
+				height: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				color: rgba($color: #fff, $alpha: 0.87);
+				font-weight: 700;
+				@include adaptiv-value('font-size', 36, 24, 1);
+				z-index: 1;
+				transition: all 0.3s ease 0s;
+				opacity: 1;
+				visibility: visible;
+			}
+			&:hover {
+				&::after {
+					background-color: transparent;
+				}
+				&::before {
+					opacity: 0;
+					visibility: hidden;
+				}
+			}
+		}
+	}
+}

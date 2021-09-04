@@ -122,7 +122,7 @@ h6 {
 */
 body {
   color: #1dbce3;
-  background-image: url("/img/icons/blue-snow.png");
+  background-image: url("../img/icons/blue-snow.png");
 }
 body._lock {
   overflow: hidden;
@@ -2406,7 +2406,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
     right: 0;
     width: 280px;
     height: 200px;
-    background-image: url("/img/icons/unesko.png");
+    background-image: url("../img/icons/unesko.png");
     background-repeat: no-repeat;
     background-size: 100%;
     z-index: -1;
@@ -2423,7 +2423,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
     right: -250px;
     width: 280px;
     height: 200px;
-    background-image: url("/img/icons/unesko.png");
+    background-image: url("../img/icons/unesko.png");
     background-repeat: no-repeat;
     background-size: 100%;
     z-index: 1;

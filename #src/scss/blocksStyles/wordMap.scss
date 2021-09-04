@@ -1,6 +1,9 @@
 .word-map {
 	@include adaptiv-value('padding-top', 110, 80, 1);
 	@include adaptiv-value('padding-bottom', 110, 80, 1);
+	@media (max-width: $md2 + px) {
+		display: none;
+	}
 
 	// .word-map__container
 

@@ -58,11 +58,10 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			// @include adaptiv-value('padding-left', 20, 10, 1);
-			// @include adaptiv-value('padding-right', 20, 10, 1);
 			position: relative;
 			transition: all 0.5s ease 0s;
 			white-space: nowrap;
+			transition: all 0.3s ease 0s;
 		}
 		&:last-child {
 			margin: 0 0 0 0;
@@ -76,16 +75,25 @@
 			height: 100%;
 			background: #4580ea;
 			z-index: -1;
+			border: 1px solid transparent;
 			transition: all 0.3s ease 0s;
+			border-radius: 4px;
 		}
 		&._active {
 			box-shadow: none;
+			span {
+				color: #4580ea;
+				font-weight: 700;
+				cursor: default;
+			}
 			&::after {
-				filter: blur(4px);
+				// filter: blur(4px);
+				background-color: transparent;
+				border: 1px solid #4580ea;
 			}
 		}
 		@media (min-width: $md2 + px) {
-			&:hover {
+			&:hover:not(&._active) {
 				box-shadow: none;
 				&::after {
 					filter: blur(4px);
@@ -109,8 +117,12 @@
 		flex-direction: column;
 		height: 100%;
 		@include adaptiv-value('padding', 30, 15, 1);
-		background: #8cbeeb;
-		border-radius: 4px;
+		background: #fff;
+		border-radius: 10px;
+
+		&._active {
+			box-shadow: 2px 8px 20px rgba($color: #000000, $alpha: 0.3);
+		}
 	}
 	// .body-incoming__content
 
@@ -120,7 +132,7 @@
 	// .body-incoming__title
 
 	&__title {
-		color: #fff;
+		color: #4580ea;
 		font-weight: bold;
 		@include adaptiv-value('font-size', 24, 20, 1);
 		@include adaptiv-value('margin-bottom', 30, 20, 1);
@@ -130,7 +142,7 @@
 
 	&__text {
 		flex: 1 1 auto;
-		color: darken($color: #4580ea, $amount: 5);
+		color: rgba($color: #000000, $alpha: 0.4);
 		@include adaptiv-value('font-size', 18, 14, 1);
 		line-height: 144%;
 	}
@@ -169,7 +181,8 @@
 
 	&__school {
 		font-family: $secongFamily;
-		color: #fff;
+		color: rgba($color: #000000, $alpha: 0.4);
 		@include adaptiv-value('font-size', 24, 18, 1);
+		text-decoration: underline;
 	}
 }

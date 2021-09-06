@@ -40,6 +40,13 @@
 				}
 			}
 		}
+		.menu__title {
+			a {
+				display: block;
+				animation: logoChangeColor 10s ease-in-out 0s infinite alternate;
+				animation-play-state: running;
+			}
+		}
 	}
 	// .header__container
 
@@ -51,9 +58,32 @@
 
 	&__content {
 		height: inherit;
-		display: flex;
-		justify-content: flex-end;
-		align-items: center;
+		// display: flex;
+		// justify-content: flex-end;
+		// align-items: center;
+	}
+
+	// .header__title
+
+	&__title {
+		// @media (max-width: $md2 + px) {
+		// 	position: absolute;
+		// 	top: 20px;
+		// 	left: 50%;
+		// 	width: 100%;
+		// 	height: 100%;
+		// }
+		// a {
+		// 	color: #4580ea;
+		// 	@include adaptiv-value('font-size', 24, 16, 1);
+		// 	font-weight: 700;
+		// 	text-shadow: 0 1px 0 #cccccc, 0 2px 0 #cccccc, 0 3px 0 #cccccc,
+		// 		0 4px 0 #cccccc, 0 5px 0 #cccccc, 0 6px 0 #cccccc, 0 7px 0 #cccccc,
+		// 		0 8px 0 #cccccc, 0 9px 0 #cccccc;
+		// 	display: none;
+		// 	animation: logoChangeColor 10s ease-in-out 0s infinite alternate;
+		// 	animation-play-state: paused;
+		// }
 	}
 
 	// .header__menu
@@ -62,6 +92,7 @@
 	}
 }
 .menu {
+	height: inherit;
 	// .menu__icon
 
 	&__icon {
@@ -70,9 +101,10 @@
 	// .menu__body
 
 	&__body {
-		display: flex;
 		height: inherit;
+		display: flex;
 		align-items: center;
+		justify-content: flex-end;
 		@media (max-width: $md2 + px) {
 			position: fixed;
 			width: 100%;
@@ -90,12 +122,35 @@
 			-o-transition: all 0.5s ease 0s;
 			transition: all 0.5s ease 0s;
 			flex-direction: column;
-
+			justify-content: flex-start;
 			&._active {
 				right: 0;
 			}
 		}
 	}
+
+	// // .menu__title
+
+	&__title {
+		@media (min-width: $md2 + px) {
+			margin-right: auto;
+		}
+		@media (max-width: $md2 + px) {
+			margin-bottom: 15px;
+		}
+		a {
+			color: #4580ea;
+			@include adaptiv-value('font-size', 24, 24, 1);
+			font-weight: 700;
+			text-shadow: 0 1px 0 #cccccc, 0 2px 0 #cccccc, 0 3px 0 #cccccc,
+				0 4px 0 #cccccc, 0 5px 0 #cccccc, 0 6px 0 #cccccc, 0 7px 0 #cccccc,
+				0 8px 0 #cccccc, 0 9px 0 #cccccc;
+			display: none;
+			animation: logoChangeColor 10s ease-in-out 0s infinite alternate;
+			animation-play-state: paused;
+		}
+	}
+
 	&__content {
 		margin-right: 15px;
 		margin-top: 7px;
@@ -144,7 +199,8 @@
 		display: flex;
 		align-items: center;
 		text-align: center;
-		color: darken($color: $mainColor, $amount: 5);
+		// color: darken($color: $mainColor, $amount: 5);
+		color: #4580ea;
 		@media (max-width: $md2 + px) {
 			color: #fff;
 		}
@@ -325,5 +381,17 @@
 		transform: translate(0, -50%);
 		width: 24px;
 		height: 24px;
+	}
+}
+
+@keyframes logoChangeColor {
+	0% {
+		color: #4580ea;
+	}
+	50% {
+		color: rgba($color: #000000, $alpha: 0.4);
+	}
+	100% {
+		color: rgba(255, 225, 69, 1);
 	}
 }

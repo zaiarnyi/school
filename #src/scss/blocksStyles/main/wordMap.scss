@@ -51,11 +51,6 @@
 	// .word-map__info
 
 	&__info {
-		&.active {
-			.word-map__country {
-				transform: translate(0, 0);
-			}
-		}
 	}
 
 	// .word-map__country
@@ -106,18 +101,26 @@
 			padding-left: 15px;
 			color: #fff;
 			text-transform: capitalize;
+			border: 1px solid transparent;
 			@include adaptiv-value('margin-bottom', 15, 10, 1);
 			@media (min-width: $md2 + px) {
-				transition: all 0.3s ease 0s;
-				&:hover {
+				transition: all 0.5s ease 0s;
+				&:not(.active):hover {
 					box-shadow: 0px 4px 6px 2px rgba(0, 0, 0, 0.25);
 					transform: translate(10%, 0);
 				}
 			}
-			&.active,
-			&.mouse {
+
+			&:not(.active).mouse {
 				box-shadow: 0px 4px 6px 2px rgba(0, 0, 0, 0.25);
 				transform: translate(10%, 0);
+			}
+			&.active {
+				border: 1px solid #4580ea;
+				background-color: transparent;
+				color: #4580ea;
+				transform: translate(10%, 0);
+				font-weight: 700;
 			}
 		}
 	}

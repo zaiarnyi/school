@@ -196,7 +196,7 @@ function wordMap() {
 
 			if (!e.currentTarget.classList.contains('active')) {
 				listMenu.forEach((item) => item.classList.remove('active'));
-				e.target.classList.add('active');
+				e.currentTarget.classList.add('active');
 
 				[...map.children].forEach((item) => {
 					item.classList.remove('click');
@@ -210,6 +210,8 @@ function wordMap() {
 			const check = [...listMenu].some((name) =>
 				name.classList.contains('active'),
 			);
+			console.log('click');
+			console.log(listMenu[0]);
 
 			elem.style.cssText =
 				'transform:translate(10%,0);opacity:0;visibility:hidden;';
@@ -221,9 +223,9 @@ function wordMap() {
 					title = listMenu[0].textContent,
 					img = countryPicture(currentCountry, title);
 
+				listMenu[0].classList.add('active');
+				mapId.classList.add('click');
 				elem.addEventListener('transitionend', () => {
-					listMenu[0].classList.add('active');
-					mapId.classList.add('click');
 					elem.querySelector('img').remove();
 					elem.append(img);
 					elem.querySelector('span').textContent = title;
@@ -232,7 +234,6 @@ function wordMap() {
 					textInfo.style.cssText = 'opacity:1;visibility:visible;';
 				});
 			} else {
-
 				elem.addEventListener('transitionend', () => {
 					elem.style.cssText =
 						'transform:translate(0,0);opacity:1;visibility:visible;';

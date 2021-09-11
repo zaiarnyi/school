@@ -34,8 +34,6 @@
 		@include adaptiv-value('margin-bottom', 30, 10, 1);
 		@include adaptiv-value('gap', 30, 10, 1);
 
-		// @include adaptiv-value('margin-left', -30, -10, 1);
-		// @include adaptiv-value('margin-right', -30, -10, 1);
 		@media (max-width: 600px) {
 			flex-wrap: wrap;
 		}
@@ -52,6 +50,8 @@
 		overflow: hidden;
 		white-space: nowrap;
 		flex: 0 1 25%;
+
+		// max-width: 20%;
 		span {
 			color: #fff;
 			@include adaptiv-value('height', 48, 30, 1);
@@ -150,7 +150,6 @@
 	// .body-incoming__bottom
 
 	&__bottom {
-
 	}
 
 	// .body-incoming__button

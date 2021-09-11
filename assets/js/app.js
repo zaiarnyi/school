@@ -1194,7 +1194,7 @@ function wordMap() {
 
 	function countryPicture(name, title) {
 		const img = document.createElement('img');
-		img.src = `img/country/${name.toUpperCase()}.svg`;
+		img.src = `assets/img/country/${name.toUpperCase()}.svg`;
 		img.setAttribute('alt', `Країна ${title}`);
 		return img;
 	}

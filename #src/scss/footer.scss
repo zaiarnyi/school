@@ -203,6 +203,7 @@
 					pointer-events: none;
 					@include adaptiv-value('width', 24, 18, 1);
 					@include adaptiv-value('height', 24, 18, 1);
+					object-fit: contain;
 				}
 			}
 		}

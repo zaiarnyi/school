@@ -15,8 +15,8 @@
 						<div class="slide-news">
 							<div class="slide-news__image _ibg">
 								<picture>
-									<source srcset="img/news/1.webp" type="image/webp" />
-									<img src="img/news/1.jpg?_v=1631362948196" alt="title"/>
+									<source srcset="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/1.webp'); ?>" type="image/webp" />
+									<img src="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/1.jpg'); ?>" alt="title"/>
 							</picture>
 							</div>
 							<div class="slide-news__content">
@@ -24,7 +24,7 @@
 									<a href="/" class="slide-news__title-link">Заголовок новости</a>
 								</div>
 								<div class="slide-news__text">
-									<span>Здесь может быть описание какой-то новостишколы</span>
+									<span>Здесь может быть описание какой-то новости школы</span>
 								</div>
 								<div class="slide-news__button">
 									<a href="/" class="slide-news__link">детальніше</a>
@@ -36,8 +36,8 @@
 						<div class="slide-news">
 							<div class="slide-news__image _ibg">
 								<picture>
-									<source srcset="img/news/2.webp" type="image/webp" />
-									<img src="img/news/2.jpg?_v=1631362948196" alt="title"/>
+									<source srcset="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/2.webp'); ?>" type="image/webp" />
+									<img src="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/2.jpg'); ?>" alt="title"/>
 							</picture>
 							</div>
 							<div class="slide-news__content">
@@ -61,8 +61,8 @@
 						<div class="slide-news">
 							<div class="slide-news__image _ibg">
 								<picture>
-									<source srcset="img/news/3.webp" type="image/webp" />
-									<img src="img/news/3.jpg?_v=1631362948196" alt="title"/>
+									<source srcset="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/3.webp'); ?>" type="image/webp" />
+									<img src="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/3.jpg'); ?>" alt="title"/>
 							</picture>
 							</div>
 							<div class="slide-news__content">
@@ -85,8 +85,8 @@
 						<div class="slide-news">
 							<div class="slide-news__image _ibg">
 								<picture>
-									<source srcset="img/news/4.webp" type="image/webp" />
-									<img src="img/news/4.jpg?_v=1631362948196" alt="title"/>
+									<source srcset="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/4.webp'); ?>" type="image/webp" />
+									<img src="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/4.jpg'); ?>" alt="title"/>
 							</picture>
 							</div>
 							<div class="slide-news__content">
@@ -109,8 +109,8 @@
 						<div class="slide-news">
 							<div class="slide-news__image _ibg">
 								<picture>
-									<source srcset="img/news/4.webp" type="image/webp" />
-									<img src="img/news/4.jpg?_v=1631362948196" alt="title"/>
+									<source srcset="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/3.webp'); ?>" type="image/webp" />
+									<img src="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/3.jpg'); ?>" alt="title"/>
 							</picture>
 							</div>
 							<div class="slide-news__content">
@@ -133,16 +133,14 @@
 					<div class="news__slide">
 						<div class="slide-news">
 							<div class="slide-news__image _ibg">
-								<picture
-									><source srcset="img/news/2.webp" type="image/webp" />
-									<img src="img/news/2.jpg?_v=1631362948196" alt="title"
-								/></picture>
+								<picture>
+									<source srcset="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/2.webp'); ?>" type="image/webp" />
+									<img src="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/2.jpg'); ?>" alt="title"/>
+								</picture>
 							</div>
 							<div class="slide-news__content">
 								<div class="slide-news__title">
-									<a href="/" class="slide-news__title-link"
-										>Заголовок новости</a
-									>
+									<a href="/" class="slide-news__title-link">Заголовок новости</a>
 								</div>
 								<div class="slide-news__text">
 									<span>
@@ -294,7 +292,7 @@
 						</div>
 					</div>
 					<div class="word-map__item">
-						<object data="img/word/map.svg" type="image/svg+xml"></object>
+						<object data="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/word/map.svg'); ?>" type="image/svg+xml"></object>
 					</div>
 				</div>
 				<div class="word-map__info">
@@ -314,99 +312,99 @@
 			</div>
 			<div class="achievements__body _gallery">
 				<div class="achievements__item">
-					<a href="img/news/1.jpg" class="achievements__link">
+					<a href="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/1.jpg'); ?>" class="achievements__link">
 						<picture>
-							<source srcset="img/news/1.webp" type="image/webp" />
-							<img src="img/news/1.jpg?_v=1631362948196" alt=""	/>
-					</picture>
+							<source srcset="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/1.webp'); ?>" type="image/webp" />
+							<img src="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/1.jpg'); ?>" alt=""	/>
+						</picture>
 					</a>
 				</div>
 				<div class="achievements__item">
-					<a href="img/news/2.jpg" class="achievements__link">
+					<a href="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/2.jpg'); ?>" class="achievements__link">
 						<picture>
-							<source srcset="img/news/2.webp" type="image/webp" />
-							<img src="img/news/2.jpg?_v=1631362948196" alt=""	/>
-					</picture>
+							<source srcset="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/2.webp'); ?>" type="image/webp" />
+							<img src="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/2.jpg'); ?>" alt=""	/>
+						</picture>
 					</a>
 				</div>
 				<div class="achievements__item">
-					<a href="img/news/3.jpg" class="achievements__link">
+					<a href="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/3.jpg'); ?>" class="achievements__link">
 						<picture>
-							<source srcset="img/news/3.webp" type="image/webp" />
-							<img src="img/news/3.jpg?_v=1631362948196" alt=""	/>
-					</picture>
+							<source srcset="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/3.webp'); ?>" type="image/webp" />
+							<img src="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/3.jpg'); ?>" alt=""	/>
+						</picture>
 					</a>
 				</div>
 				<div class="achievements__item">
-					<a href="img/news/4.jpg" class="achievements__link">
+					<a href="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/3.jpg'); ?>" class="achievements__link">
 						<picture>
-							<source srcset="img/news/4.webp" type="image/webp" />
-							<img src="img/news/4.jpg?_v=1631362948196" alt=""	/>
-					</picture>
+							<source srcset="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/3.webp'); ?>" type="image/webp" />
+							<img src="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/3.jpg'); ?>" alt=""	/>
+						</picture>
 					</a>
 				</div>
 				<div class="achievements__item">
-					<a href="img/news/1.jpg" class="achievements__link">
+					<a href="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/2.jpg'); ?>" class="achievements__link">
 						<picture>
-							<source srcset="img/news/1.webp" type="image/webp" />
-							<img src="img/news/1.jpg?_v=1631362948196" alt=""	/>
-					</picture>
+							<source srcset="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/2.webp'); ?>" type="image/webp" />
+							<img src="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/2.jpg'); ?>" alt=""	/>
+						</picture>
 					</a>
 				</div>
 				<div class="achievements__item">
-					<a href="img/news/2.jpg" class="achievements__link">
+					<a href="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/4.jpg'); ?>" class="achievements__link">
 						<picture>
-							<source srcset="img/news/2.webp" type="image/webp" />
-							<img src="img/news/2.jpg?_v=1631362948196" alt=""	/>
-					</picture>
+							<source srcset="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/4.webp'); ?>" type="image/webp" />
+							<img src="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/4.jpg'); ?>" alt=""	/>
+						</picture>
 					</a>
 				</div>
 				<div class="achievements__item">
-					<a href="img/news/3.jpg" class="achievements__link">
+					<a href="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/21jpg'); ?>" class="achievements__link">
 						<picture>
-							<source srcset="img/news/3.webp" type="image/webp" />
-							<img src="img/news/3.jpg?_v=1631362948196" alt=""	/>
-					</picture>
+							<source srcset="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/1.webp'); ?>" type="image/webp" />
+							<img src="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/1.jpg'); ?>" alt=""	/>
+						</picture>
 					</a>
 				</div>
 				<div class="achievements__item">
-					<a href="img/news/4.jpg" class="achievements__link">
+					<a href="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/3.jpg'); ?>" class="achievements__link">
 						<picture>
-							<source srcset="img/news/4.webp" type="image/webp" />
-							<img src="img/news/4.jpg?_v=1631362948196" alt=""	/>
-					</picture>
+							<source srcset="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/3.webp'); ?>" type="image/webp" />
+							<img src="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/3.jpg'); ?>" alt=""	/>
+						</picture>
 					</a>
 				</div>
 				<div class="achievements__item">
-					<a href="img/news/1.jpg" class="achievements__link">
+					<a href="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/4.jpg'); ?>" class="achievements__link">
 						<picture>
-							<source srcset="img/news/1.webp" type="image/webp" />
-							<img src="img/news/1.jpg?_v=1631362948196" alt=""	/>
-					</picture>
+							<source srcset="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/4.webp'); ?>" type="image/webp" />
+							<img src="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/4.jpg'); ?>" alt=""	/>
+						</picture>
 					</a>
 				</div>
 				<div class="achievements__item">
-					<a href="img/news/2.jpg" class="achievements__link">
+					<a href="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/1.jpg'); ?>" class="achievements__link">
 						<picture>
-							<source srcset="img/news/2.webp" type="image/webp" />
-							<img src="img/news/2.jpg?_v=1631362948196" alt=""	/>
-					</picture>
+							<source srcset="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/1.webp'); ?>" type="image/webp" />
+							<img src="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/1.jpg'); ?>" alt=""	/>
+						</picture>
 					</a>
 				</div>
 				<div class="achievements__item">
-					<a href="img/news/3.jpg" class="achievements__link">
+					<a href="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/3.jpg'); ?>" class="achievements__link">
 						<picture>
-							<source srcset="img/news/3.webp" type="image/webp" />
-							<img src="img/news/3.jpg?_v=1631362948196" alt=""	/>
-					</picture>
+							<source srcset="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/3.webp'); ?>" type="image/webp" />
+							<img src="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/3.jpg'); ?>" alt=""	/>
+						</picture>
 					</a>
 				</div>
 				<div class="achievements__item">
-					<a href="img/news/4.jpg" class="achievements__link">
+					<a href="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/4.jpg'); ?>" class="achievements__link">
 						<picture>
-							<source srcset="img/news/4.webp" type="image/webp" />
-							<img src="img/news/4.jpg?_v=1631362948196" alt=""/>
-					</picture>
+							<source srcset="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/4.webp'); ?>" type="image/webp" />
+							<img src="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/4.jpg'); ?>" alt=""	/>
+						</picture>
 					</a>
 				</div>
 			</div>

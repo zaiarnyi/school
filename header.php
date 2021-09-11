@@ -4,7 +4,7 @@
 		<title><?php esc_url(bloginfo('name')); echo " | "; esc_url(bloginfo('description'));  ?></title>
 		<meta charset="UTF-8" />
 		<meta name="format-detection" content="telephone=no" />
-		<link rel="shortcut icon" href="favicon.ico" />
+		<link rel="shortcut icon" href="<?php echo esc_url(get_bloginfo('template_url') . '/favicon.ico'); ?>" />
 		<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no,viewport-fit=cover">
 		<?php wp_head(); ?>
 	</head>
@@ -88,7 +88,7 @@
 								<div class="slider__item">
 									<a href="/" >
 										<picture >
-											<source srcset="<?php echo esc_url(get_bloginfo('template_url') . '/assets/iimg/slider/3.webp'); ?>" type="image/webp" />
+											<source srcset="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/slider/3.webp'); ?>" type="image/webp" />
 											<img src="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/slider/3.jpg'); ?>" alt="title" /></picture >
 									</a>
 								</div>

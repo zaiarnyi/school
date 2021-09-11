@@ -67,7 +67,7 @@
 										</li>
 										<li data-text="telegram">
 											<a href="http://telegram.com" target="_blank" rel="noopener noreferrer" >
-												<img src="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/icons/tg');?>" alt="link to out official telegram group" />
+												<img src="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/icons/tg.svg');?>" alt="link to out official telegram group" />
 											</a>
 										</li>
 										<li data-text="instagram">

@@ -1074,15 +1074,16 @@ function wordMap() {
 			const check = [...listMenu].some((name) =>
 				name.classList.contains('active'),
 			);
+
+			elem.style.cssText =
+				'transform:translate(10%,0);opacity:0;visibility:hidden;';
+			textInfo.style.cssText = 'opacity:0;visibility:hidden;';
+
 			if (!check) {
 				const currentCountry = listMenu[0].dataset.country,
 					mapId = map.querySelector(`#${currentCountry}`),
 					title = listMenu[0].textContent,
 					img = countryPicture(currentCountry, title);
-
-				elem.style.cssText =
-					'transform:translate(10%,0);opacity:0;visibility:hidden;';
-				textInfo.style.cssText = 'opacity:0;visibility:hidden;';
 
 				elem.addEventListener('transitionend', () => {
 					listMenu[0].classList.add('active');
@@ -1095,9 +1096,6 @@ function wordMap() {
 					textInfo.style.cssText = 'opacity:1;visibility:visible;';
 				});
 			} else {
-				elem.style.cssText =
-					'transform:translate(10%,0);opacity:0;visibility:hidden;';
-				textInfo.style.cssText = 'opacity:0;visibility:hidden;';
 
 				elem.addEventListener('transitionend', () => {
 					elem.style.cssText =
@@ -1142,7 +1140,8 @@ function wordMap() {
 				),
 				title = menuItem.textContent,
 				img = countryPicture(currentID, title),
-				elem = infoDescr.querySelector('.word-map__country');
+				elem = infoDescr.querySelector('.word-map__country'),
+				textInfo = infoDescr.querySelector('.word-map__text');
 
 			if (!e.currentTarget.classList.contains('click')) {
 				[...map.children].forEach((item) => item.classList.remove('click'));
@@ -1160,21 +1159,34 @@ function wordMap() {
 				name.classList.contains('active'),
 			);
 
+			elem.style.cssText =
+				'transform:translate(10%,0);opacity:0;visibility:hidden;';
+			textInfo.style.cssText = 'opacity:0;visibility:hidden;';
 			if (!check) {
 				const currentCountry = listMenu[0].dataset.country,
 					mapId = map.querySelector(`#${currentCountry}`),
 					title = listMenu[0].textContent,
 					img = countryPicture(currentCountry, title);
 
-				listMenu[0].classList.add('active');
-				mapId.classList.add('click');
-				elem.querySelector('img').remove();
-				elem.append(img);
-				elem.querySelector('span').textContent = title;
+				elem.addEventListener('transitionend', () => {
+					listMenu[0].classList.add('active');
+					mapId.classList.add('click');
+					elem.querySelector('img').remove();
+					elem.append(img);
+					elem.querySelector('span').textContent = title;
+					elem.style.cssText =
+						'transform:translate(0,0);opacity:1;visibility:visible;';
+					textInfo.style.cssText = 'opacity:1;visibility:visible;';
+				});
 			} else {
-				elem.querySelector('img').remove();
-				elem.append(img);
-				elem.querySelector('span').textContent = title;
+				elem.addEventListener('transitionend', () => {
+					elem.style.cssText =
+						'transform:translate(0,0);opacity:1;visibility:visible;';
+					textInfo.style.cssText = 'opacity:1;visibility:visible;';
+					elem.querySelector('img').remove();
+					elem.append(img);
+					elem.querySelector('span').textContent = title;
+				});
 			}
 		});
 	});

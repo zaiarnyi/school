@@ -2374,6 +2374,8 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   pointer-events: none;
   width: 24px;
   height: 24px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .banner {

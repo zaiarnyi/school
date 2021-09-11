@@ -51,12 +51,10 @@
 	// .word-map__info
 
 	&__info {
-		visibility: hidden;
-		opacity: 0;
-		transition: all 0.3s ease 0s;
 		&.active {
-			opacity: 1;
-			visibility: visible;
+			.word-map__country {
+				transform: translate(0, 0);
+			}
 		}
 	}
 
@@ -65,7 +63,10 @@
 	&__country {
 		display: flex;
 		@include adaptiv-value('margin-bottom', 15, 5, 1);
-
+		transform: translate(-8%, 0);
+		transition: all 0.5s ease 0.15s;
+		opacity: 0;
+		visibility: hidden;
 		img {
 			display: inline-block;
 			margin-top: 3px;
@@ -87,6 +88,7 @@
 	// .word-map__text
 
 	&__text {
+		transition: all 0.3s ease 0.2s;
 	}
 }
 

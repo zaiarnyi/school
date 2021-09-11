@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		sliderSHowNextSlide(newsSliderData);
 	}
 	showMoreListCountry();
-
 });
 
 window.addEventListener('load', () => {
@@ -164,6 +163,9 @@ function wordMap() {
 				title = item.textContent,
 				img = countryPicture(country, title),
 				elem = infoDescr.querySelector('.word-map__country');
+
+			elem.style.cssText =
+				'transform:translate(0,0);opacity:1;visibility:visible;';
 			elem.querySelector('span').textContent = title;
 			elem.append(img);
 		}
@@ -189,7 +191,8 @@ function wordMap() {
 				currentMapCountry = map.querySelector(`#${countryValue}`),
 				title = item.textContent,
 				img = countryPicture(countryValue, title),
-				elem = infoDescr.querySelector('.word-map__country');
+				elem = infoDescr.querySelector('.word-map__country'),
+				textInfo = infoDescr.querySelector('.word-map__text');
 
 			if (!e.currentTarget.classList.contains('active')) {
 				listMenu.forEach((item) => item.classList.remove('active'));
@@ -213,15 +216,33 @@ function wordMap() {
 					title = listMenu[0].textContent,
 					img = countryPicture(currentCountry, title);
 
-				listMenu[0].classList.add('active');
-				mapId.classList.add('click');
-				elem.querySelector('img').remove();
-				elem.append(img);
-				elem.querySelector('span').textContent = title;
+				elem.style.cssText =
+					'transform:translate(10%,0);opacity:0;visibility:hidden;';
+				textInfo.style.cssText = 'opacity:0;visibility:hidden;';
+
+				elem.addEventListener('transitionend', () => {
+					listMenu[0].classList.add('active');
+					mapId.classList.add('click');
+					elem.querySelector('img').remove();
+					elem.append(img);
+					elem.querySelector('span').textContent = title;
+					elem.style.cssText =
+						'transform:translate(0,0);opacity:1;visibility:visible;';
+					textInfo.style.cssText = 'opacity:1;visibility:visible;';
+				});
 			} else {
-				elem.querySelector('img').remove();
-				elem.append(img);
-				elem.querySelector('span').textContent = title;
+				elem.style.cssText =
+					'transform:translate(10%,0);opacity:0;visibility:hidden;';
+				textInfo.style.cssText = 'opacity:0;visibility:hidden;';
+
+				elem.addEventListener('transitionend', () => {
+					elem.style.cssText =
+						'transform:translate(0,0);opacity:1;visibility:visible;';
+					textInfo.style.cssText = 'opacity:1;visibility:visible;';
+					elem.querySelector('img').remove();
+					elem.append(img);
+					elem.querySelector('span').textContent = title;
+				});
 			}
 		});
 

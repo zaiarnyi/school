@@ -6,32 +6,34 @@
 		&::after {
 			content: '';
 			position: absolute;
-			top: -25%;
+			top: -20%;
 			right: 0;
-			width: 280px;
+			width: 200px;
 			height: 200px;
 			background-image: url('../img/icons/unesko.png');
 			background-repeat: no-repeat;
 			background-size: 100%;
-			z-index: -1;
+			transform: rotate(25deg);
+			z-index: -3;
 		}
 	}
 
 	// .slider__container
 
 	&__container {
-		@media (min-width: 1630px) {
+		@media (min-width: 1631px) {
 			position: relative;
 			&::after {
 				content: '';
 				position: absolute;
-				top: -150px;
+				top: -129px;
 				right: -250px;
-				width: 280px;
+				width: 200px;
 				height: 200px;
 				background-image: url('../img/icons/unesko.png');
 				background-repeat: no-repeat;
 				background-size: 100%;
+				transform: rotate(25deg);
 				z-index: 1;
 				@media (max-width: 1680px) {
 					right: -230px;

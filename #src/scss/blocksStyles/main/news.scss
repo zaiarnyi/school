@@ -181,10 +181,6 @@
 	@media (max-width: 1040px) {
 		max-width: none;
 	}
-	// @media (max-width: 550 + px) {
-	// 	max-width: 90%;
-	// 	margin: 0 auto;
-	// }
 	@media (min-width: $md2 + px) {
 		&:hover {
 			background-color: darken($color: #8cbeeb, $amount: 10);

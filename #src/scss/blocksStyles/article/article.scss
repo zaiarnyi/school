@@ -1,0 +1,24 @@
+.article {
+	@include adaptiv-value('padding-top', 80, 40, 1);
+	@include adaptiv-value('padding-bottom', 80, 40, 1);
+
+	// .article__container
+
+	&__container {
+	}
+
+	// .article__body
+
+	&__body {
+		color: #000;
+		background-color: #fff;
+		border-radius: 10px;
+		padding: 10px;
+		// .article__body_custom
+
+		&_custom {
+			line-height: 144%;
+			@include adaptiv-value('font-size', 18, 14, 1);
+		}
+	}
+}

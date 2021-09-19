@@ -11,6 +11,10 @@ add_theme_support('menus');
 /** Добавляем классы ссылкам */
 add_filter( 'nav_menu_link_attributes', 'filter_nav_menu_link_attributes', 10, 4 );
 add_filter('nav_menu_item_id', '__return_false');
+/** Заполняет поле для атрибута alt на основе заголовка изображения при его вставки в контент поста. */
+add_filter( 'wp_prepare_attachment_for_js', 'change_empty_alt_to_title' );
+/** Дополним базовый robots.txt */
+add_action( 'robots_txt', 'robots_txt_append', -1 );
 // add_filter('nav_menu_css_class', 'my_remove_all_class_item', 10, 2 );
 
 function school_styles(){
@@ -54,6 +58,40 @@ if ( in_array( $args->theme_location, ['main-menu'] ) ) {
 function my_remove_all_class_item($classes, $item) {
   $classes = '';
   return $classes;
+}
+
+
+function change_empty_alt_to_title( $response ) {
+    if ( ! $response['alt'] ) {
+        $response['alt'] = sanitize_text_field( $response['title'] );
+    }
+
+    return $response;
+}
+
+
+
+function robots_txt_append( $output ){
+
+    $str = '
+	Disallow: /cgi-bin             # Стандартная папка на хостинге.
+	Disallow: /?                   # Все параметры запроса на главной.
+	Disallow: *?s=                 # Поиск.
+	Disallow: *&s=                 # Поиск.
+	Disallow: /search              # Поиск.
+	Disallow: /author/             # Архив автора.
+	Disallow: */embed              # Все встраивания.
+	Disallow: */page/              # Все виды пагинации.
+	Disallow: */xmlrpc.php         # Файл WordPress API
+	Disallow: *utm*=               # Ссылки с utm-метками
+	Disallow: *openstat=           # Ссылки с метками openstat
+	';
+
+    $str = trim( $str );
+    $str = preg_replace( '/^[\t ]+(?!#)/mU', '', $str );
+    $output .= "$str\n";
+
+    return $output;
 }
 
 

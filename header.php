@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ua">
 	<head>
-		<title><?php esc_url(bloginfo('name')); echo " | "; esc_url(bloginfo('description'));  ?></title>
+		<title><?php  esc_url(bloginfo('name')); echo " | "; is_home() ? esc_url(bloginfo('description')) : esc_url(wp_title('') || the_title());  ?></title>
 		<meta charset="UTF-8" />
 		<meta name="format-detection" content="telephone=no" />
 		<link rel="shortcut icon" href="<?php echo esc_url(get_bloginfo('template_url') . '/favicon.ico'); ?>" />

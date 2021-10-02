@@ -1,167 +1,66 @@
 <?php
 /*
 Template Name: Teachers
-Template Post Type: page
+Template Post Type: teachers,page
 */
 ?>
 <?php get_header(); ?>
 <div class="staf">
     <div class="staf__container _container">
         <div class="staf__top">
-            <div class="staf__title title _scr-item"><?php the_title(); ?></div>
+            <div class="staf__title title _scr-item"><?php the_title();?> </div>
         </div>
-        <div class="staf__body">
-            <div class="staf__item">
-                <div class="item-staf">
-                    <div class="item-staf__icons">
-                        <picture>
-                            <source srcset="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/1.webp'); ?>" type="image/webp" />
-                            <img src="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/1.jpg'); ?>" alt="title"/>
-                        </picture>
+
+            <?php
+            $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+            $argsAdmin = array(
+                'post_type' => 'teach',
+                'posts_per_page' => 10,
+                'order' => 'DESC',
+                'paged' => $paged
+            );
+            the_field('staff_lessons');
+            query_posts( $argsAdmin );
+            echo get_field('admin_work');
+            // Цикл WordPress
+            if( have_posts() ){ ?>
+                <div class="staf__body">
+                <?php while( have_posts() ){
+                    the_post(); ?>
+                    <div class="staf__item" id="post-<?php echo get_post()->ID ?>">
+                        <div class="item-staf">
+                            <div class="item-staf__icons">
+                                <?php echo get_the_post_thumbnail(null, 'medium'); ?>
+                            </div>
+                            <div class="item-staf__body">
+                                <div class="item-staf__name"><span><?php the_title(); ?></span></div>
+                                <div class="item-staf__position"><?php the_field('staff_lessons'); ?></div>
+                                <div class="item-staf__status"><?php the_field('regalyy') ?></div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="item-staf__body">
-                        <div class="item-staf__name"><span>Петро Васильович</span></div>
-                        <div class="item-staf__position">Українська мова</div>
-                        <div class="item-staf__status">Специалист высшей категории</div>
-                    </div>
+                <?php } ?>
                 </div>
+            <div class="staf__pagination">
+            <?php
+                $argsPagination = array(
+                    'show_all' => false, // показаны все страницы участвующие в пагинации
+                    'end_size' => 1,     // количество страниц на концах
+                    'mid_size' => 1,     // количество страниц вокруг текущей
+                    'prev_next' => true,  // выводить ли боковые ссылки "предыдущая/следующая страница".
+                    'prev_text' => __('Previous'),
+                    'next_text' => __('Next'),
+                    'add_args' => false, // Массив аргументов (переменных запроса), которые нужно добавить к ссылкам.
+                    'add_fragment' => '',     // Текст который добавиться ко всем ссылкам.
+                    'screen_reader_text' => __('Posts navigation'),
+                );
+
+                the_posts_pagination(); ?>
             </div>
-            <div class="staf__item">
-                <div class="item-staf">
-                    <div class="item-staf__icons">
-                        <picture>
-                            <source srcset="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/1.webp'); ?>" type="image/webp" />
-                            <img src="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/1.jpg'); ?>" alt="title"/>
-                        </picture>
-                    </div>
-                    <div class="item-staf__body">
-                        <div class="item-staf__name"><span>Петро Васильович</span></div>
-                        <div class="item-staf__position">Українська мова</div>
-                        <div class="item-staf__status">Специалист высшей категории</div>
-                    </div>
-                </div>
-            </div>
-            <div class="staf__item">
-                <div class="item-staf">
-                    <div class="item-staf__icons">
-                        <picture>
-                            <source srcset="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/1.webp'); ?>" type="image/webp" />
-                            <img src="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/1.jpg'); ?>" alt="title"/>
-                        </picture>
-                    </div>
-                    <div class="item-staf__body">
-                        <div class="item-staf__name"><span>Петро Васильович</span></div>
-                        <div class="item-staf__position">Українська мова</div>
-                        <div class="item-staf__status">Специалист высшей категории</div>
-                    </div>
-                </div>
-            </div>
-            <div class="staf__item">
-                <div class="item-staf">
-                    <div class="item-staf__icons">
-                        <picture>
-                            <source srcset="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/1.webp'); ?>" type="image/webp" />
-                            <img src="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/1.jpg'); ?>" alt="title"/>
-                        </picture>
-                    </div>
-                    <div class="item-staf__body">
-                        <div class="item-staf__name"><span>Петро Васильович</span></div>
-                        <div class="item-staf__position">Українська мова</div>
-                        <div class="item-staf__status">Специалист высшей категории</div>
-                    </div>
-                </div>
-            </div>
-            <div class="staf__item">
-                <div class="item-staf">
-                    <div class="item-staf__icons">
-                        <picture>
-                            <source srcset="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/1.webp'); ?>" type="image/webp" />
-                            <img src="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/1.jpg'); ?>" alt="title"/>
-                        </picture>
-                    </div>
-                    <div class="item-staf__body">
-                        <div class="item-staf__name"><span>Петро Васильович</span></div>
-                        <div class="item-staf__position">Українська мова</div>
-                        <div class="item-staf__status">Специалист высшей категории</div>
-                    </div>
-                </div>
-            </div>
-            <div class="staf__item">
-                <div class="item-staf">
-                    <div class="item-staf__icons">
-                        <picture>
-                            <source srcset="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/1.webp'); ?>" type="image/webp" />
-                            <img src="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/1.jpg'); ?>" alt="title"/>
-                        </picture>
-                    </div>
-                    <div class="item-staf__body">
-                        <div class="item-staf__name"><span>Петро Васильович</span></div>
-                        <div class="item-staf__position">Українська мова</div>
-                        <div class="item-staf__status">Специалист высшей категории</div>
-                    </div>
-                </div>
-            </div>
-            <div class="staf__item">
-                <div class="item-staf">
-                    <div class="item-staf__icons">
-                        <picture>
-                            <source srcset="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/1.webp'); ?>" type="image/webp" />
-                            <img src="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/1.jpg'); ?>" alt="title"/>
-                        </picture>
-                    </div>
-                    <div class="item-staf__body">
-                        <div class="item-staf__name"><span>Петро Васильович</span></div>
-                        <div class="item-staf__position">Українська мова</div>
-                        <div class="item-staf__status">Специалист высшей категории</div>
-                    </div>
-                </div>
-            </div>
-            <div class="staf__item">
-                <div class="item-staf">
-                    <div class="item-staf__icons">
-                        <picture>
-                            <source srcset="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/1.webp'); ?>" type="image/webp" />
-                            <img src="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/1.jpg'); ?>" alt="title"/>
-                        </picture>
-                    </div>
-                    <div class="item-staf__body">
-                        <div class="item-staf__name"><span>Петро Васильович</span></div>
-                        <div class="item-staf__position">Українська мова</div>
-                        <div class="item-staf__status">Специалист высшей категории</div>
-                    </div>
-                </div>
-            </div>
-            <div class="staf__item">
-                <div class="item-staf">
-                    <div class="item-staf__icons">
-                        <picture>
-                            <source srcset="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/1.webp'); ?>" type="image/webp" />
-                            <img src="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/1.jpg'); ?>" alt="title"/>
-                        </picture>
-                    </div>
-                    <div class="item-staf__body">
-                        <div class="item-staf__name"><span>Петро Васильович</span></div>
-                        <div class="item-staf__position">Українська мова</div>
-                        <div class="item-staf__status">Специалист высшей категории</div>
-                    </div>
-                </div>
-            </div>
-            <div class="staf__item">
-                <div class="item-staf">
-                    <div class="item-staf__icons">
-                        <picture>
-                            <source srcset="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/1.webp'); ?>" type="image/webp" />
-                            <img src="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/news/1.jpg'); ?>" alt="title"/>
-                        </picture>
-                    </div>
-                    <div class="item-staf__body">
-                        <div class="item-staf__name"><span>Петро Васильович</span></div>
-                        <div class="item-staf__position">Українська мова</div>
-                        <div class="item-staf__status">Специалист высшей категории</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+              <?php  wp_reset_query();
+            }
+            ?>
+
     </div>
 </div>
 <?php get_footer(); ?>

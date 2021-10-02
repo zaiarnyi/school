@@ -15,68 +15,76 @@
 									<ul class="footer__contacts-list">
 										<div class="footer__contacts-item">
 											<p>Телефон:</p>
-											<li>
-												<a href="tel:+380442535423" class="footer__contacts-link" >
-													+38 (044) 253 5423
+											<li><?php $int1 = preg_replace('/[^0-9]/', '', get_theme_mod('sample_first_phone_contacts')); ?>
+												<a href="tel:+<?php echo $int1; ?>" class="footer__contacts-link" >
+                                                    <?php echo get_theme_mod('sample_first_phone_contacts'); ?>
 												</a>
 											</li>
-											<li>
-												<a href="tel:+380442533567" class="footer__contacts-link" >
-													+38 (044) 253 3567
+											<li><?php $int2 = preg_replace('/[^0-9]/', '', get_theme_mod('sample_second_phone_contacts')); ?>
+												<a href="tel:+<?php echo $int2; ?>" class="footer__contacts-link" >
+                                                    <?php echo get_theme_mod('sample_second_phone_contacts'); ?>
 												</a>
 											</li>
-											<li>
-												<a href="tel:+380442530551" class="footer__contacts-link" >
-													+38 (044) 253 0551
+											<li><?php $int3 = preg_replace('/[^0-9]/', '', get_theme_mod('sample_third_phone_contacts')); ?>
+												<a href="tel:+<?php echo $int3; ?>" class="footer__contacts-link" >
+                                                    <?php echo get_theme_mod('sample_third_phone_contacts'); ?>
 												</a>
 											</li>
-											<li>
-												<a href="tel:+380442531448" class="footer__contacts-link" >
-													+38 (044) 253 1448
+											<li><?php $int4 = preg_replace('/[^0-9]/', '', get_theme_mod('sample_fourth_phone_contacts')); ?>
+												<a href="tel:+<?php echo $int4; ?>" class="footer__contacts-link" >
+                                                    <?php echo get_theme_mod('sample_fourth_phone_contacts'); ?>
 												</a>
 											</li>
 											<p>Факс:</p>
-											<li>
-												<a href="tel:380442540203" class="footer__contacts-link" >
-													+38 (044) 254 0203
+											<li><?php $int5 = preg_replace('/[^0-9]/', '', get_theme_mod('sample_fifth_phone_contacts')); ?>
+												<a href="tel:+<?php echo $int5; ?>" class="footer__contacts-link" >
+                                                    <?php echo get_theme_mod('sample_fifth_phone_contacts'); ?>
 												</a>
 											</li>
 										</div>
 										<div class="footer__contacts-item">
 											<p>Email:</p>
 											<li>
-												<a href="mailto:irl51_kiev@ukr.net" class="footer__contacts-link" >
-													irl51_kiev@ukr.net
+												<a href="mailto:<?php echo get_theme_mod('sample_first_email_contacts'); ?>" class="footer__contacts-link" >
+                                                    <?php echo get_theme_mod('sample_first_email_contacts'); ?>
 												</a>
 											</li>
 											<li>
-												<a href="mailto:lmv@irl51.kiev.ua" class="footer__contacts-link" >
-													LMV@IRL51.KIEV.UA
+												<a href="mailto:<?php echo get_theme_mod('sample_second_email_contacts'); ?>" class="footer__contacts-link" >
+                                                    <?php echo get_theme_mod('sample_second_email_contacts'); ?>
 												</a>
 											</li>
 										</div>
 									</ul>
 								</div>
-								<div class="footer__item">
-									<p class="footer__social-title">Соціальні мережі</p>
-									<ul class="footer__social-list">
-										<li data-text="facebook">
-											<a href="http://facebook.com" target="_blank" rel="noopener noreferrer">
-												<img src="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/icons/fb.svg');?>" alt="link to out official facebook page" />
-											</a>
-										</li>
-										<li data-text="telegram">
-											<a href="http://telegram.com" target="_blank" rel="noopener noreferrer" >
-												<img src="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/icons/tg.svg');?>" alt="link to out official telegram group" />
-											</a>
-										</li>
-										<li data-text="instagram">
-											<a href="http://instagram.com" target="_blank" rel="noopener noreferrer">
-												<img src="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/icons/inst.svg');?>" alt="link to out official instagram page"/>
-											</a>
-										</li>
-									</ul>
-								</div>
+                                <?php if(get_theme_mod('sample_first_social_contacts') or get_theme_mod('sample_second_social_contacts') or get_theme_mod('sample_third_social_contacts')){ ?>
+                                    <div class="footer__item">
+                                        <p class="footer__social-title">Соціальні мережі</p>
+                                        <ul class="footer__social-list">
+                                            <?php if(get_theme_mod('sample_first_social_contacts')){ ?>
+                                                <li data-text="facebook">
+                                                    <a href="<?php echo get_theme_mod('sample_first_social_contacts','https://facebook.com'); ?>" target="_blank" rel="noopener noreferrer">
+                                                        <img src="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/icons/fb.svg');?>" alt="link to out official facebook page" />
+                                                    </a>
+                                                </li>
+                                            <?php } ?>
+                                            <?php if(get_theme_mod('sample_second_social_contacts')){ ?>
+                                                <li data-text="telegram">
+                                                    <a href="<?php echo get_theme_mod('sample_second_social_contacts','https://telegram.com'); ?>" target="_blank" rel="noopener noreferrer" >
+                                                        <img src="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/icons/tg.svg');?>" alt="link to out official telegram group" />
+                                                    </a>
+                                                </li>
+                                            <?php } ?>
+                                            <?php if(get_theme_mod('sample_third_social_contacts')){ ?>
+                                                <li data-text="instagram">
+                                                    <a href="<?php echo get_theme_mod('sample_third_social_contacts', 'https://instagram.com'); ?>" target="_blank" rel="noopener noreferrer">
+                                                        <img src="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/icons/inst.svg');?>" alt="link to out official instagram page"/>
+                                                    </a>
+                                                </li>
+                                            <?php } ?>
+                                        </ul>
+                                    </div>
+                                <?php } ?>
 							</div>
 						</div>
 						<div

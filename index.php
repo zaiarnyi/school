@@ -6,7 +6,7 @@
                     <h2 class="news__title title _scr-item">Новини</h2>
                 </div>
                 <div class="news__all">
-                    <a href="/news" class="news__all-link" data-da=".news__title-top ,992,1">Усі новини</a>
+                    <a href="<?php echo esc_url(is_ssl() ? home_url('/', 'https') : home_url('/', 'http')); ?>news" class="news__all-link" data-da=".news__title-top ,992,1">Усі новини</a>
                 </div>
             </div>
             <div class="news__content">
@@ -20,7 +20,7 @@
                         'order' => 'DESC'
                     );
                     $queryNews = new WP_Query( $argsNews );
-                    $countNews = count($queryNews -> have_posts());
+                    $countNews = count($queryNews -> posts);
                     if ( $queryNews->have_posts() ) {
                         while ( $queryNews->have_posts() ) {
                             $queryNews->the_post();?>
@@ -213,7 +213,7 @@ $argsAchievements = array(
     'posts_per_page' => 12,
 );
 $queryAchievements = new WP_Query($argsAchievements);
-if ($queryAchievements->have_posts() and count($queryAchievements->have_posts()) > 12) { ?>
+if ($queryAchievements->have_posts() AND count($queryAchievements->posts) > 12) { ?>
     <?php while ($queryAchievements->have_posts()) {
         $queryAchievements->the_post();
         $args = array(

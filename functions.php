@@ -15,7 +15,6 @@ add_filter('nav_menu_item_id', '__return_false');
 add_filter( 'wp_prepare_attachment_for_js', 'change_empty_alt_to_title' );
 /** Дополним базовый robots.txt */
 add_action( 'robots_txt', 'robots_txt_append', -1 );
-// add_filter('nav_menu_css_class', 'my_remove_all_class_item', 10, 2 );
 
 function school_styles(){
 	 wp_enqueue_style( 'style', get_stylesheet_uri() ); 
@@ -36,7 +35,6 @@ function webp_upload_mimes( $existing_mimes ) {
 
 register_nav_menus(array(
 	'main-menu'    => 'Меню в шапке',    //Название меню в шаблоне
-	'circle-menu'    => 'Кругле меню',    //Название меню в шаблоне
 ));
 
 
@@ -53,11 +51,6 @@ if ( in_array( $args->theme_location, ['main-menu'] ) ) {
 	}
 }
 	return $atts;
-}
-/*удаляет Класс и ID */
-function my_remove_all_class_item($classes, $item) {
-  $classes = '';
-  return $classes;
 }
 
 
@@ -127,4 +120,13 @@ function posts_custom_column_views($column_name, $id){
     if($column_name === 'post_views'){
         echo getPostViews(get_the_ID());
     }
+}
+
+add_filter('navigation_markup_template', 'my_navigation_template', 10, 2 );
+function my_navigation_template( $template, $class ){
+    return '
+	<nav class="navigation %1$s" role="navigation">
+		<div class="nav-links">%3$s</div>
+	</nav>    
+	';
 }

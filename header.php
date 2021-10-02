@@ -21,28 +21,33 @@
 							</div>
 							<nav class="menu__body">
 								<div class="menu__title">
-									<a href="<?php echo esc_url(home_url('/', 'https')); ?>">
+									<a href="<?php echo esc_url(is_ssl() ? home_url('/', 'https') : home_url('/', 'http')); ?>">
 										<picture>
 											<source srcset="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/icons/logo.webp'); ?>" type="image/webp" />
 											<img src="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/icons/logo.png'); ?>" alt=""/>
 									</picture>
 									</a>
 								</div>
-								<div class="menu__content">
-									<ul class="menu__list">
-										<li><a href="#" class="menu__link">Головна</a></li>
-										<li><a href="#" class="menu__link">Наш ліцей</a></li>
-										<li><a href="#" class="menu__link">Історія</a></li>
-										<li>
-											<a href="#" class="menu__link">Міжнародна діяльність</a>
-										</li>
-										<li>
-											<a href="#" class="menu__link">Прозорість діяльності</a>
-										</li>
-										<li><a href="#" class="menu__link">Стоп булінг!</a></li>
-										<li><a href="#" class="menu__link">Контакти</a></li>
-									</ul>
-								</div>
+                                <?php
+                                wp_nav_menu( array(
+                                    'menu'            => 'main-menu',              // (string) Название выводимого меню (указывается в админке при создании меню, приоритетнее
+                                    // чем указанное местоположение theme_location - если указано, то параметр theme_location игнорируется)
+                                    'container'       => 'nav',           // (string) Контейнер меню. Обворачиватель ul. Указывается тег контейнера (по умолчанию в тег div)
+                                    'container_class' => 'menu__content',              // (string) class контейнера (div тега)
+                                    'container_id'    => '',              // (string) id контейнера (div тега)
+                                    'menu_class'      => 'menu__list',          // (string) class самого меню (ul тега)
+                                    'menu_id'         => '',              // (string) id самого меню (ul тега)
+                                    'echo'            => true,            // (boolean) Выводить на экран или возвращать для обработки
+                                    'fallback_cb'     => 'wp_page_menu',  // (string) Используемая (резервная) функция, если меню не существует (не удалось получить)
+                                    'before'          => '',              // (string) Текст перед <a> каждой ссылки
+                                    'after'           => '',              // (string) Текст после </a> каждой ссылки
+                                    'link_before'     => '<span>',              // (string) Текст перед анкором (текстом) ссылки
+                                    'link_after'      => '</span>',              // (string) Текст после анкора (текста) ссылки
+                                    'depth'           => 0,               // (integer) Глубина вложенности (0 - неограничена, 2 - двухуровневое меню)
+                                    'walker'          => '',              // (object) Класс собирающий меню. Default: new Walker_Nav_Menu
+                                    'theme_location'  => 'main-menu'               // (string) Расположение меню в шаблоне. (указывается ключ которым было зарегистрировано меню в функции register_nav_menus)
+                                ) );
+                                ?>
 								<div class="menu__search">
 									<div class="search-menu">
 										<button class="search-menu__button">
@@ -72,8 +77,8 @@
 						<div class="slider__content">
 							<div class="slider__items _swiper">
                                 <?php
-                                $query = new WP_Query( 'showposts=15&meta_key=post_views_count&orderby=meta_value_num' );
-                                $count = count($query -> have_posts());
+                                $query = new WP_Query( 'category_name=news&posts_per_page=15&meta_key=post_views_count&orderby=meta_value_num' );
+                                $count = count($query -> posts);
                                 if ( $query->have_posts() ) {
                                     while ( $query->have_posts() ) {
                                         $query->the_post(); ?>
@@ -102,7 +107,7 @@
 					<div class="main-menu__container _container">
 						<div class="main-menu__items" data-da=".menu__content,992,1">
 							<div class="main-menu__item">
-								<a href="/" class="item-menu">
+								<a href="<?php echo esc_url(is_ssl() ? home_url('/', 'https') : home_url('/', 'http')); ?>administration" class="item-menu">
 									<div class="item-menu__image">
 										<img src="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/menu/1.svg'); ?>" alt="content picture"/>
 									</div>
@@ -110,7 +115,7 @@
 								</a>
 							</div>
 							<div class="main-menu__item">
-								<a href="/" class="item-menu">
+								<a href="<?php echo esc_url(is_ssl() ? home_url('/', 'https') : home_url('/', 'http')); ?>teachers" class="item-menu">
 									<div class="item-menu__image">
 										<img src="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/menu/2.svg'); ?>" alt="content picture" />
 									</div>

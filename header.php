@@ -71,61 +71,30 @@
 					<div class="slider__container _container">
 						<div class="slider__content">
 							<div class="slider__items _swiper">
-								<div class="slider__item">
-									<a href="/">
-										<picture >
-											<source srcset="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/slider/1.webp'); ?>" type="image/webp" />
-											<img src="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/slider/1.jpg'); ?>" alt="title" /></picture >
-									</a>
-								</div>
-								<div class="slider__item">
-									<a href="/" >
-										<picture >
-											<source srcset="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/slider/2.webp'); ?>" type="image/webp" />
-											<img src="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/slider/2.jpg'); ?>" alt="title" /></picture >
-									</a>
-								</div>
-								<div class="slider__item">
-									<a href="/" >
-										<picture >
-											<source srcset="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/slider/3.webp'); ?>" type="image/webp" />
-											<img src="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/slider/3.jpg'); ?>" alt="title" /></picture >
-									</a>
-								</div>
-								<div class="slider__item">
-									<a href="/" >
-										<picture >
-											<source srcset="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/slider/4.webp'); ?>" type="image/webp" />
-											<img src="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/slider/4.jpg'); ?>" alt="title" /></picture >
-									</a>
-								</div>
-								<div class="slider__item">
-									<a href="/" >
-										<picture >
-											<source srcset="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/slider/1.webp'); ?>" type="image/webp" />
-											<img src="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/slider/1.jpg'); ?>" alt="title" /></picture >
-									</a>
-								</div>
-								<div class="slider__item">
-									<a href="/" >
-										<picture >
-											<source srcset="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/slider/2.webp'); ?>" type="image/webp" />
-											<img src="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/slider/2.jpg'); ?>" alt="title" /></picture >
-									</a>
-								</div>
-								<div class="slider__item">
-									<a href="/">
-										<picture>
-											<source srcset="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/slider/3.webp'); ?>" type="image/webp" />
-											<img src="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/slider/3.jpg'); ?>" alt="title" />
-										</picture>
-									</a>
-								</div>
+                                <?php
+                                $query = new WP_Query( 'showposts=15&meta_key=post_views_count&orderby=meta_value_num' );
+                                $count = count($query -> have_posts());
+                                if ( $query->have_posts() ) {
+                                    while ( $query->have_posts() ) {
+                                        $query->the_post(); ?>
+                                        <div class="slider__item">
+                                            <a href="<?php the_permalink(); ?>">
+                                                <?php echo get_the_post_thumbnail(null, 'medium' ); ?>
+                                            </a>
+                                        </div>
+                                   <?php }
+                                }
+                                wp_reset_postdata();
+                                ?>
 							</div>
-							<div class="slider__button">
-								<div class="slider__pagination slider__pagination_prev"></div>
-								<div class="slider__pagination slider__pagination_next"></div>
-							</div>
+                            <?php
+                            if ( $query->have_posts() AND $count > 4) { ?>
+                            <div class="slider__button">
+                                <div class="slider__pagination slider__pagination_prev"></div>
+                                <div class="slider__pagination slider__pagination_next"></div>
+                            </div>
+                            <?php } wp_reset_postdata(); ?>
+
 						</div>
 					</div>
 				</section>

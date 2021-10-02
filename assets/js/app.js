@@ -877,8 +877,11 @@ document.addEventListener('DOMContentLoaded', () => {
 		nextBtn: '.news__arrow_next',
 		prevBtn: '.news__arrow_prev',
 	};
-	sliderSHowNextSlide(mainSliderData);
-	if (document.querySelector('.news')) {
+	if(document.querySelector('.slider__button')){
+		sliderSHowNextSlide(mainSliderData);
+	}
+
+	if (document.querySelector('.news') && document.querySelector('.news__pagination')) {
 		sliderSHowNextSlide(newsSliderData);
 	}
 	showMoreListCountry();
@@ -1314,7 +1317,7 @@ if (document.querySelector('.news')) {
 
 		// Arrows
 		navigation: {
-			nextEl: '.news__arrow.news__arrow_next',
+			nextEl: '.news__arrowsliderSHowNextSlide',
 			prevEl: '.news__arrow.news__arrow_prev',
 		},
 

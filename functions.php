@@ -1,11 +1,11 @@
 <?php
-
+require get_template_directory() . '/customize/customize.php';
 add_action( 'wp_enqueue_scripts', 'school_scripts');
 add_action( 'wp_enqueue_scripts', 'school_styles');
 /* Разрешаем добовлять картинки формата WebP */
 add_filter( 'mime_types', 'webp_upload_mimes' );
 /** Разрешаем добовлять картинки к записям */
-add_theme_support( 'post-thumbnails', array( 'post') );
+add_theme_support( 'post-thumbnails' );
 /** Включаем меню в админке */
 add_theme_support('menus');
 /** Добавляем классы ссылкам */
@@ -95,4 +95,36 @@ function robots_txt_append( $output ){
 }
 
 
-?>
+function getPostViews($postID){
+    $count_key = 'post_views_count';
+    $count = get_post_meta($postID, $count_key, true);
+    if($count==''){
+        delete_post_meta($postID, $count_key);
+        add_post_meta($postID, $count_key, '0');
+        return "0";
+    }
+    return $count;
+}
+function setPostViews($postID) {
+    $count_key = 'post_views_count';
+    $count = get_post_meta($postID, $count_key, true);
+    if($count==''){
+        $count = 0;
+        delete_post_meta($postID, $count_key);
+        add_post_meta($postID, $count_key, '0');
+    }else{
+        $count++;
+        update_post_meta($postID, $count_key, $count);
+    }
+}
+add_filter('manage_posts_columns', 'posts_column_views');
+add_action('manage_posts_custom_column', 'posts_custom_column_views',5,2);
+function posts_column_views($defaults){
+    $defaults['post_views'] = __('Просмотры');
+    return $defaults;
+}
+function posts_custom_column_views($column_name, $id){
+    if($column_name === 'post_views'){
+        echo getPostViews(get_the_ID());
+    }
+}

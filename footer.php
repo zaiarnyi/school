@@ -84,7 +84,7 @@
 							aria-label="2008 — 2019 International Relations Lyceum 51 | Ліцей Міжнародних Відносин №51"
 							title="design and create code Denis Zayarnyi"
 						>
-							© 2008 — 2019 International Relations Lyceum 51 | Ліцей
+							© 2008 — <?php echo date('Y') ?> International Relations Lyceum 51 | Ліцей
 							Міжнародних Відносин №51
 						</div>
 					</div>

@@ -70,7 +70,7 @@
 			</header>
 			<main class="page">
 				<section class="banner">
-					<img src="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/banner/logo.svg'); ?>" alt="content picture"/>
+					<img src="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/banner/logo.svg'); ?>" alt="logo <?php  esc_url(bloginfo('name')); ?>"/>
 				</section>
 				<section class="slider">
 					<div class="slider__container _container">

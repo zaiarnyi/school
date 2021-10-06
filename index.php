@@ -213,7 +213,7 @@ $argsAchievements = array(
     'posts_per_page' => 12,
 );
 $queryAchievements = new WP_Query($argsAchievements);
-if ($queryAchievements->have_posts() AND count($queryAchievements->posts) > 12) { ?>
+if ($queryAchievements->have_posts()) { ?>
     <?php while ($queryAchievements->have_posts()) {
         $queryAchievements->the_post();
         $args = array(

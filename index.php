@@ -11,7 +11,6 @@
             </div>
             <div class="news__content">
                 <div class="news__slider _swiper">
-
                     <?php
                     $argsNews = array(
                         'post_type' => 'post',
@@ -169,6 +168,15 @@
             </div>
         </div>
     </section>
+    <?php
+    $argsNews = array(
+        'post_type' => 'partnership',
+        'posts_per_page' => 15,
+        'order' => 'DESC'
+    );
+    $queryNews = new WP_Query( $argsNews );
+    $countNews = count($queryNews -> posts);
+    if ( $queryNews->have_posts() ) { ?>
     <section class="word-map">
         <div class="word-map__container _container">
             <div class="word-map__top">
@@ -179,33 +187,24 @@
                     <div class="word-map__item">
                         <div class="info-word">
                             <ul class="info-word__list">
-                                <li data-country="fr" class="active">Франція</li>
-                                <li data-country="gb">Велика Британія</li>
-                                <li data-country="no">Норвегія</li>
-                                <li data-country="se">Швеція</li>
-                                <li data-country="ch">Швейцарія</li>
-                                <li data-country="tr">Туреччина</li>
-                                <li data-country="de">Німеччина</li>
-                                <li data-country="us">США</li>
+                            <?php while ( $queryNews->have_posts() ) { $queryNews->the_post(); ?>
+                                <li data-country="<?php the_field('country'); ?>"><?php the_title(); ?></li>
+                                 <?php } ?>
                             </ul>
                         </div>
                     </div>
                     <div class="word-map__item">
-                        <object data="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/word/map.svg'); ?>"
-                                type="image/svg+xml"></object>
+                        <object data="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/word/map.svg'); ?>" type="image/svg+xml"></object>
                     </div>
                 </div>
                 <div class="word-map__info">
                     <div class="word-map__country"><span></span></div>
-                    <div class="word-map__text">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                        Vitae, vero?
-                    </div>
+                    <div class="word-map__text"></div>
                 </div>
             </div>
         </div>
     </section>
-
+ <?php } wp_reset_postdata(); ?>
 <?php
 $argsAchievements = array(
     'post_type' => 'post',

@@ -83,7 +83,10 @@
 	// .word-map__text
 
 	&__text {
-		transition: all 0.3s ease 0.2s;
+		opacity: 0;
+		visibility: hidden;
+		transform: translate(8%, 0);
+		transition: all 0.5s ease 0.15s;
 	}
 }
 

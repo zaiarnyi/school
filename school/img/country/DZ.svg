@@ -1,1 +1,11 @@
-<svg width="13" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x=".25" y=".25" width="12.5" height="11.5" rx="1.75" fill="#fff" stroke="#F5F5F5" stroke-width=".5"/><mask id="a" maskUnits="userSpaceOnUse" x="0" y="0" width="13" height="12"><rect x=".25" y=".25" width="12.5" height="11.5" rx="1.75" fill="#fff" stroke="#fff" stroke-width=".5"/></mask><g mask="url(#a)" fill-rule="evenodd" clip-rule="evenodd"><path d="M0 12h6.81V0H0v12z" fill="#048345"/><path d="M8.048 6.624l-.728.67.268-1.101-.718-.687.894-.01.284-1.096.283 1.095.894.01-.718.688.268 1.101-.727-.67z" fill="#E81B42"/><path d="M8.208 8.629c-.477.602-1.118.971-1.824.971-1.474 0-2.67-1.612-2.67-3.6s1.196-3.6 2.67-3.6c.706 0 1.347.369 1.825.971a2.08 2.08 0 00-1.096-.316C5.772 3.055 4.685 4.373 4.685 6c0 1.627 1.087 2.945 2.428 2.945a2.08 2.08 0 001.095-.316z" fill="#E81B42"/></g></svg>
+<svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.25" y="0.25" width="12.5" height="11.5" rx="1.75" fill="white" stroke="#F5F5F5" stroke-width="0.5"/>
+<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="13" height="12">
+<rect x="0.25" y="0.25" width="12.5" height="11.5" rx="1.75" fill="white" stroke="white" stroke-width="0.5"/>
+</mask>
+<g mask="url(#mask0)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 12H6.80952V0H0V12Z" fill="#048345"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M8.04767 6.62402L7.31993 7.29445L7.58844 6.19285L6.87017 5.5056L7.76385 5.4952L8.04767 4.40002L8.33148 5.4952L9.22516 5.5056L8.50689 6.19285L8.7754 7.29445L8.04767 6.62402Z" fill="#E81B42"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M8.20848 8.62888C7.73115 9.23124 7.08966 9.60002 6.38429 9.60002C4.90966 9.60002 3.71423 7.98825 3.71423 6.00002C3.71423 4.0118 4.90966 2.40002 6.38429 2.40002C7.08968 2.40002 7.73118 2.76882 8.20851 3.37121C7.87928 3.1687 7.50688 3.05458 7.11252 3.05458C5.77194 3.05458 4.68519 4.37331 4.68519 6.00004C4.68519 7.62677 5.77194 8.94549 7.11252 8.94549C7.50687 8.94549 7.87926 8.83138 8.20848 8.62888Z" fill="#E81B42"/>
+</g>
+</svg>

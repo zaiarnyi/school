@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (document.querySelector('.news') && document.querySelector('.news__pagination')) {
         sliderSHowNextSlide(newsSliderData);
     }
-
+    onSubmitSearch();
 });
 
 window.addEventListener('load', () => {
@@ -54,6 +54,9 @@ function toggleSearch() {
         }
     });
 }
+
+
+
 
 //Clear  Search field
 function clearSearchField() {
@@ -347,4 +350,17 @@ function wordMap(content) {
             group.style.cursor = 'pointer';
         }
     }
+}
+
+//Submit Search Form
+function onSubmitSearch(){
+    const form = document.querySelector('.field-search'),
+        inputSubmit = form.querySelector('.search-submit');
+
+    form.addEventListener('keydown',(e)=>{
+        if(e.code === 'Enter'){
+            e.preventDefault();
+            inputSubmit.click();
+        }
+    });
 }

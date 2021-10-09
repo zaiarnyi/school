@@ -360,12 +360,20 @@
 	}
 }
 .field-search {
-	position: relative;
+
+
+	// .field-search__body
+
+	&__body {
+		position: relative;
+		width: 100%;
+		height: 100%;
+	}
+
 	// .field-search__input
 
 	&__input {
 		border-radius: 4px !important;
-		// @include adaptiv-value('height', 48, 40, 1);
 		height: 48px;
 		box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
 		color: lighten($color: #929395, $amount: 15);

@@ -1,0 +1,29 @@
+.search-page {
+	@include adaptiv-value('padding-top', 80, 50, 1);
+	@include adaptiv-value('padding-bottom', 80, 50, 1);
+
+	&__container {
+	}
+	&__top {
+		display: flex;
+		align-items: center;
+		@include adaptiv-value('margin-bottom', 50, 40, 1);
+	}
+	&__result{
+		color:rgba(0,0,0,.4);
+		@include adaptiv-value('margin-right', 50, 25, 1);
+	}
+	&__title {
+	}
+	&__body {
+		background-color: #fff;
+		border-radius: 10px;
+		padding: 10px;
+	}
+}
+.search-submit{
+	width: 0;
+	height: 0;
+	opacity: 0;
+	visibility: hidden;
+}

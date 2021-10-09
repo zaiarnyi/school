@@ -1,11 +1,1 @@
-<svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="13" height="12" rx="2" fill="white"/>
-<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="13" height="12">
-<rect width="13" height="12" rx="2" fill="white"/>
-</mask>
-<g mask="url(#mask0)">
-<rect width="13" height="12" fill="#0E4CB5"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M0 7.2H3.71429V12H5.57143V7.2H13V4.8H5.57143V0H3.71429V4.8H0V7.2Z" fill="white"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M0 6.4H4.33333V12H4.95238V6.4H13V5.6H4.95238V0H4.33333V5.6H0V6.4Z" fill="#EB363A"/>
-</g>
-</svg>
+<svg width="13" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="13" height="12" rx="2" fill="#fff"/><mask id="a" maskUnits="userSpaceOnUse" x="0" y="0" width="13" height="12"><rect width="13" height="12" rx="2" fill="#fff"/></mask><g mask="url(#a)"><path fill="#0E4CB5" d="M0 0h13v12H0z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M0 7.2h3.714V12h1.857V7.2H13V4.8H5.571V0H3.714v4.8H0v2.4z" fill="#fff"/><path fill-rule="evenodd" clip-rule="evenodd" d="M0 6.4h4.333V12h.62V6.4H13v-.8H4.952V0h-.619v5.6H0v.8z" fill="#EB363A"/></g></svg>

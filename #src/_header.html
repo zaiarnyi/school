@@ -36,18 +36,20 @@
 							</button>
 							<div class="search-menu__field">
 								<div class="field-search">
-									<input
-										autocomplete="off"
-										type="text"
-										name="search"
-										id="search"
-										class="input field-search__input"
-										data-value="Строка пошуку..."
-									/>
-
-									<button class="field-search__button">
-										<img src="img/icons/search-close.svg" alt="content picture"/>
-									</button>
+									<div class="field-search__body">
+										<input
+											autocomplete="off"
+											type="text"
+											name="search"
+											id="search"
+											class="input field-search__input"
+											data-value="Строка пошуку..."
+										/>
+										<button class="field-search__button">
+											<img src="img/icons/search-close.svg" alt="content picture"/>
+										</button>
+									</div>
+									<input type="submit" class="search-submit" value="<?php echo esc_attr_x( 'Search', 'submit button' ) ?>" aria-label="<?php echo esc_attr_x( 'Search', 'submit button' ) ?>"/>
 								</div>
 							</div>
 						</div>

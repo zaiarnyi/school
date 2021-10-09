@@ -71,7 +71,7 @@ Template Post Type: page
             </div>
         </div>
         <div class="contacts-info__map #map">
-            <?php the_content(); ?>
+            <?php echo do_shortcode( '[wpgmza id="1"]' );?>
         </div>
     </div>
 </div>

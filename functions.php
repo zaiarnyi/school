@@ -14,7 +14,10 @@ add_filter('nav_menu_item_id', '__return_false');
 /** Заполняет поле для атрибута alt на основе заголовка изображения при его вставки в контент поста. */
 add_filter( 'wp_prepare_attachment_for_js', 'change_empty_alt_to_title' );
 /** Дополним базовый robots.txt */
-add_action( 'robots_txt', 'robots_txt_append', -1 );
+add_action( 'wp_head', 'wp_robots', 1 );
+@ini_set ('upload_max_size', '120M');
+@ini_set ('post_max_size', '120M');
+@ini_set ('max_execution_time', '300');
 
 function school_styles(){
 	 wp_enqueue_style( 'style', get_stylesheet_uri() ); 
@@ -64,30 +67,6 @@ function change_empty_alt_to_title( $response ) {
 
 
 
-function robots_txt_append( $output ){
-
-    $str = '
-	Disallow: /cgi-bin             # Стандартная папка на хостинге.
-	Disallow: /?                   # Все параметры запроса на главной.
-	Disallow: *?s=                 # Поиск.
-	Disallow: *&s=                 # Поиск.
-	Disallow: /search              # Поиск.
-	Disallow: /author/             # Архив автора.
-	Disallow: */embed              # Все встраивания.
-	Disallow: */page/              # Все виды пагинации.
-	Disallow: */xmlrpc.php         # Файл WordPress API
-	Disallow: *utm*=               # Ссылки с utm-метками
-	Disallow: *openstat=           # Ссылки с метками openstat
-	';
-
-    $str = trim( $str );
-    $str = preg_replace( '/^[\t ]+(?!#)/mU', '', $str );
-    $output .= "$str\n";
-
-    return $output;
-}
-
-
 function getPostViews($postID){
     $count_key = 'post_views_count';
     $count = get_post_meta($postID, $count_key, true);
@@ -129,4 +108,4 @@ function my_navigation_template( $template, $class ){
 		<div class="nav-links">%3$s</div>
 	</nav>    
 	';
-}
+};

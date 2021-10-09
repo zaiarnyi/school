@@ -99,6 +99,7 @@
 				</div>
 			</footer>
 		</div>
+		<a href="<?php echo esc_url(is_ssl() ? home_url('/', 'https') : home_url('/', 'http')); ?>3d-flip-book/book" class="school-book"></a>
 <?php wp_footer(); ?>
 	</body>
 </html>

@@ -69,100 +69,64 @@
             <div class="incoming__body">
                 <div class="body-incoming _tabs">
                     <nav class="body-incoming__nav">
-                        <button class="body-incoming__item _tabs-item _active">
-                            <span>Мікрорайон</span>
-                        </button>
-                        <button class="body-incoming__item _tabs-item">
-                            <span>Перший клас</span>
-                        </button>
-                        <button class="body-incoming__item _tabs-item">
-                            <span>5-9 клас</span>
-                        </button>
-                        <button class="body-incoming__item _tabs-item">
-                            <span>10-11 клас</span>
-                        </button>
+                     <?php
+                        $argsNews = array(
+                            'post_type' => 'incoming',
+                            'posts_per_page' => 4,
+                            'order' => 'DESC'
+                        );
+                        $incomingTab = 1;
+                        $queryNews = new WP_Query( $argsNews );
+                        if ( $queryNews->have_posts() ) {
+                            while ( $queryNews->have_posts() ) {
+                                $queryNews->the_post();
+                                if( $incomingTab <  2) {  $incomingTab++ ?>
+                                    <button class="body-incoming__item _tabs-item _active">
+                                        <span><?php the_field('incoming_category'); ?></span>
+                                    </button>
+                                <?php } else { ?>
+                                    <button class="body-incoming__item _tabs-item">
+                                        <span><?php the_field('incoming_category'); ?></span>
+                                    </button>
+                         <?php } }  }  wp_reset_postdata(); ?>
                     </nav>
                     <div class="body-incoming__blocks">
+                    <?php
+                    $argsNews = array(
+                        'post_type' => 'incoming',
+                        'posts_per_page' => 4,
+                        'order' => 'DESC'
+                    );
+                    $incomingBlock = 1;
+                    $queryNews = new WP_Query( $argsNews );
+                    if ( $queryNews->have_posts() ) {
+                        while ( $queryNews->have_posts() ) {
+                            $queryNews->the_post();
+                            if( $incomingBlock <  2) { $incomingBlock++ ?>
                         <div class="body-incoming__block _tabs-block _active">
                             <div class="body-incoming__content">
-                                <div class="body-incoming__title">
-                                    ПРИЙОМ ДО 1 – ГО КЛАСУ ЛІЦЕЮ МІЖНАРОДНИХ ВІДНОСИН №51
-                                    м.КИЄВА
-                                </div>
-                                <div class="body-incoming__text">
-                                    Ласкаво просимо! Ліцей міжнародних відносин № 51
-                                    розпочинає набір дітей до 1 класу на 2020-2021 навч.рік
-                                    з 03 квітня 2020р. Установча конференція для батьків
-                                    майбутніх першокласників відбудеться 12 березня о 16 год
-                                    у актовій залі Ліцею.
-                                </div>
+                                <div class="body-incoming__title"><?php the_excerpt(); ?></div>
+                                <div class="body-incoming__text"><?php echo wp_trim_words( get_the_content(), 35, '...' ); ?></div>
                             </div>
                             <div class="body-incoming__bottom">
                                 <div class="body-incoming__button">
-                                    <a href="/" class="body-incoming__link">Детальніше</a>
+                                    <a href="<?php the_permalink() ?>" class="body-incoming__link">Детальніше</a>
                                 </div>
                             </div>
                         </div>
-                        <div class="body-incoming__block _tabs-block">
-                            <div class="body-incoming__content">
-                                <div class="body-incoming__title">
-                                    ПРИЙОМ ДО 4 – ГО КЛАСУ ЛІЦЕЮ МІЖНАРОДНИХ ВІДНОСИН №51
-                                    м.КИЄВА
+                        <?php } else { ?>
+                            <div class="body-incoming__block _tabs-block">
+                                    <div class="body-incoming__content">
+                                        <div class="body-incoming__title"><?php the_excerpt(); ?></div>
+                                        <div class="body-incoming__text"><?php echo wp_trim_words( get_the_content(), 35, '...' ); ?></div>
+                                    </div>
+                                    <div class="body-incoming__bottom">
+                                        <div class="body-incoming__button">
+                                            <a href="<?php the_permalink() ?>" class="body-incoming__link">Детальніше</a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="body-incoming__text">
-                                    Ласкаво просимо! Ліцей міжнародних відносин № 51
-                                    розпочинає набір дітей до 1 класу на 2020-2021 навч.рік
-                                    з 03 квітня 2020р. Установча конференція для батьків
-                                    майбутніх першокласників відбудеться 12 березня о 16 год
-                                    у актовій залі Ліцею.
-                                </div>
-                            </div>
-                            <div class="body-incoming__bottom">
-                                <div class="body-incoming__button">
-                                    <a href="/" class="body-incoming__link">Детальніше</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="body-incoming__block _tabs-block">
-                            <div class="body-incoming__content">
-                                <div class="body-incoming__title">
-                                    ПРИЙОМ ДО 3 – ГО КЛАСУ ЛІЦЕЮ МІЖНАРОДНИХ ВІДНОСИН №51
-                                    м.КИЄВА
-                                </div>
-                                <div class="body-incoming__text">
-                                    Ласкаво просимо! Ліцей міжнародних відносин № 51
-                                    розпочинає набір дітей до 1 класу на 2020-2021 навч.рік
-                                    з 03 квітня 2020р. Установча конференція для батьків
-                                    майбутніх першокласників відбудеться 12 березня о 16 год
-                                    у актовій залі Ліцею.
-                                </div>
-                            </div>
-                            <div class="body-incoming__bottom">
-                                <div class="body-incoming__button">
-                                    <a href="/" class="body-incoming__link">Детальніше</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="body-incoming__block _tabs-block">
-                            <div class="body-incoming__content">
-                                <div class="body-incoming__title">
-                                    ПРИЙОМ ДО 2 – ГО КЛАСУ ЛІЦЕЮ МІЖНАРОДНИХ ВІДНОСИН №51
-                                    м.КИЄВА
-                                </div>
-                                <div class="body-incoming__text">
-                                    Ласкаво просимо! Ліцей міжнародних відносин № 51
-                                    розпочинає набір дітей до 1 класу на 2020-2021 навч.рік
-                                    з 03 квітня 2020р. Установча конференція для батьків
-                                    майбутніх першокласників відбудеться 12 березня о 16 год
-                                    у актовій залі Ліцею.
-                                </div>
-                            </div>
-                            <div class="body-incoming__bottom">
-                                <div class="body-incoming__button">
-                                    <a href="/" class="body-incoming__link">Детальніше</a>
-                                </div>
-                            </div>
-                        </div>
+                            <?php } } } wp_reset_postdata(); ?>
                     </div>
                 </div>
             </div>
@@ -187,9 +151,10 @@
                     <div class="word-map__item">
                         <div class="info-word">
                             <ul class="info-word__list">
-                            <?php while ( $queryNews->have_posts() ) { $queryNews->the_post(); ?>
+                            <?php while ( $queryNews->have_posts() ) {
+                                $queryNews->the_post(); ?>
                                 <li data-country="<?php the_field('country'); ?>"><?php the_title(); ?></li>
-                                 <?php } ?>
+                             <?php } ?>
                             </ul>
                         </div>
                     </div>
@@ -205,25 +170,22 @@
         </div>
     </section>
  <?php } wp_reset_postdata(); ?>
-<?php
-$argsAchievements = array(
-    'post_type' => 'post',
-    'category_name' => 'achievements',
-    'posts_per_page' => 12,
-);
-$queryAchievements = new WP_Query($argsAchievements);
-if ($queryAchievements->have_posts()) { ?>
-    <?php while ($queryAchievements->have_posts()) {
-        $queryAchievements->the_post();
-        $args = array(
-            'post_type' => 'attachment',
-            'numberposts' => -1,
-            'post_status' => 'any',
-            'post_parent' => $post->ID,
-            'order' => 'DESC'
-        );
-        $attachments = get_posts($args);
-        if ($attachments) { ?>
+
+     <?php
+     $args = array(
+         'posts_per_page' => 12,
+         'numberposts' => 12,
+         'post_type' => 'attachment',
+         'post_status' => 'inherit',
+         'post_mime_type' => 'image',
+         'tax_query' => array(
+              'taxonomy' => 'category_image',
+              'terms' => array( 'achievements_media' ),
+              'field' => 'name',
+          ),
+     );
+     $attachments = get_posts($args);
+     if ($attachments AND count($attachments) > 11) { ?>
             <section class="achievements _scr-item">
                 <div class="achievements__container _container">
                     <div class="achievements__top">
@@ -231,19 +193,20 @@ if ($queryAchievements->have_posts()) { ?>
                     </div>
                     <div class="achievements__body _gallery">
                         <?php foreach ($attachments as $attachment) { ?>
-                            <div class="achievements__item">
-                                <a href="<?php echo esc_url($attachment->guid); ?>" class="achievements__link">
-                                    <img src="<?php echo esc_url($attachment->guid); ?>"
-                                         alt="<?php echo $attachment->post_title; ?>"/>
-                                </a>
-                            </div>
-                        <?php } ?>
+                             <div class="achievements__item">
+                                   <a href="<?php echo esc_url($attachment->guid); ?>" class="achievements__link">
+                                       <img src="<?php echo esc_url($attachment->guid); ?>"
+                                            alt="<?php echo $attachment->post_title; ?>"/>
+                                   </a>
+                               </div>
+                         <?php } ?>
                     </div>
                 </div>
             </section>
-        <?php }
-    } ?>
-<?php }
-wp_reset_postdata();
-?>
+   <?php } ?>
 <?php get_footer(); ?>
+
+
+
+
+

@@ -1,7 +1,7 @@
 <?php
 /*
 Template Name: Administration
-Template Post Type: administration,page
+Template Post Type: administration, page
 */
 ?>
 
@@ -54,7 +54,7 @@ Template Post Type: administration,page
                             'screen_reader_text' => __('Posts navigation'),
                         );
 
-                        the_posts_pagination(); ?>
+                        the_posts_pagination($argsPagination); ?>
                     </div>
                     <?php  wp_reset_query();
                 }
@@ -62,3 +62,10 @@ Template Post Type: administration,page
         </div>
     </div>
 <?php get_footer(); ?>
+
+<div class="achievements__item">
+                                  <a href="<?php echo esc_url($attachment->guid); ?>" class="achievements__link">
+                                      <img src="<?php echo esc_url($attachment->guid); ?>"
+                                           alt="<?php echo $attachment->post_title; ?>"/>
+                                  </a>
+                              </div>

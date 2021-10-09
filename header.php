@@ -54,12 +54,7 @@
 											<img src="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/icons/search.svg'); ?>" alt="content picture" />
 										</button>
 										<div class="search-menu__field">
-											<div class="field-search">
-												<input autocomplete="off" type="text" name="search" id="search" class="input field-search__input" data-value="Строка пошуку..." />
-												<button class="field-search__button">
-													<img src="<?php echo esc_url(get_bloginfo('template_url') . '/assets/img/icons/search-close.svg'); ?>" alt="content picture" />
-												</button>
-											</div>
+											<?php get_search_form(); ?>
 										</div>
 									</div>
 								</div>

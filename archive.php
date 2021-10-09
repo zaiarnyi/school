@@ -40,7 +40,7 @@ Template Post Type: page
                                         </div>
                                         <div class="item-news-page__date"><?php the_time('d.m.Y') ?></div>
                                     </div>
-                                    <div class="item-news-page__content"><?php the_content(); ?></div>
+                                    <div class="item-news-page__content"><?php echo wp_trim_words( get_the_content(), 100, '...' ); ?></div>
                                     <div class="item-news-page__button">
                                         <a href="<?php the_permalink(); ?>" class="item-news-page__link">
                                             детальніше
@@ -64,7 +64,7 @@ Template Post Type: page
                         'screen_reader_text' => __('Posts navigation'),
                     );
 
-                    the_posts_pagination(); ?>
+                    the_posts_pagination($argsPagination); ?>
                     </div>
                     <?php wp_reset_query();
                 }
